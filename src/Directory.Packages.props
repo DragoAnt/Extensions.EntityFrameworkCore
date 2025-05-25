@@ -1,4 +1,7 @@
 <Project>
+
+  <Import Condition="'$(IsTfmConstantsImported)'!='True'" Project="$(MSBuildThisFileDirectory).msbuild\tfm.constants.props" />
+
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
@@ -8,10 +11,6 @@
     <DragoAntSharedVersion>9.0.0</DragoAntSharedVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(IsNET6)'=='True'">
-    <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">6.0.13</EntityFrameworkCoreVersion>
-    <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">6.0.0</MicrosoftExtensionsVersion>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(IsNET7)'=='True'">
     <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">7.0.2</EntityFrameworkCoreVersion>
     <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">7.0.0</MicrosoftExtensionsVersion>
