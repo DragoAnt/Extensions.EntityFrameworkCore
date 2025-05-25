@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+
+  <!--  Exclude tests projects from code coverage by default-->
+  <PropertyGroup Condition="'$(IsTestsProject)'=='true' And '$(ExcludeFromCodeCoverage)'==''">
+    <ExcludeFromCodeCoverage>true</ExcludeFromCodeCoverage>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(IsTestsProject)'=='true'">
+    <PackageReference Include="coverlet.collector" />
+  </ItemGroup>
+
+</Project>

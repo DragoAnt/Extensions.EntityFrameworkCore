@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+
+  <Import Project="$(MSBuildThisFileDirectory)tests.project.code.coverage.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)code.coverage.targets" />
+
+  <Import Condition="'$(IsTestsProject)'=='true'"
+          Project="$(MSBuildThisFileDirectory)tests.project.packages.targets" />
+  <Import Condition="'$(IsTestsProject)'=='true' Or '$(HasTestProjectPackages)'=='true'"
+          Project="$(MSBuildThisFileDirectory)tests.project.lib.packages.targets" />
+  <Import Condition="'$(IsTestsProject)'=='true'"
+          Project="$(MSBuildThisFileDirectory)tests.project.routine.targets" />
+
+</Project>

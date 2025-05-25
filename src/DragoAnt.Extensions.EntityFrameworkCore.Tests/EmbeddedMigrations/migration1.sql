@@ -1,0 +1,1 @@
+﻿sql code from migration1

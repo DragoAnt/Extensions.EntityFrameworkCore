@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Definitions implementation</Description>
+    <Nullable>enable</Nullable>
+  </PropertyGroup> 
+
+  <ItemGroup>
+    <PackageReference Include="DragoAnt.Shared" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.Extensions.EntityDefinition.Contracts\DragoAnt.Extensions.EntityDefinition.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

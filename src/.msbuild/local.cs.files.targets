@@ -1,0 +1,45 @@
+<Project InitialTargets="CreateLocalCompileFiles">
+
+  <!-- Make Create files in local secrets folder and include it as Compile -->
+  <PropertyGroup>
+    <!-- Set LocalSecretsBaseDirectory based on the operating system -->
+    <LocalSecretsBaseDirectory Condition="$([MSBuild]::IsOsPlatform('Windows'))">$([System.Environment]::GetFolderPath(SpecialFolder.ApplicationData))\Microsoft\UserSecrets\</LocalSecretsBaseDirectory>
+    <LocalSecretsBaseDirectory Condition="$([MSBuild]::IsOsPlatform('Linux')) OR $([MSBuild]::IsOsPlatform('OSX'))">$([System.Environment]::GetFolderPath(SpecialFolder.UserProfile))/.microsoft/usersecrets/</LocalSecretsBaseDirectory>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(UserSecretsId)' != ''">
+    <LocalSecretsDir>$(LocalSecretsBaseDirectory)$(UserSecretsId)</LocalSecretsDir>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(UserSecretsId)' != ''">
+    <LocalCompileFile Include="@(LocalCompile->'$(LocalSecretsDir)/%(Identity)')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="@(LocalCompileFile)">
+      <Link>%(Filename)</Link>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Target to create LocalSecrets file -->
+  <Target Condition="'@(LocalCompileFile)' != ''" Name="CreateLocalCompileFiles">
+    <!-- Create the directory for LocalSecrets if it doesn't exist -->
+    <MakeDir Directories="$(LocalSecretsDir)" Condition="!Exists('$(LocalSecretsDir)')" />
+
+    <!-- Write an empty cs file if it doesn't exist(Default body) -->
+    <WriteLinesToFile
+      File="%(LocalCompileFile.Identity)"
+      Overwrite="true"
+      Condition="!Exists('%(LocalCompileFile.Identity)') and '%(LocalCompileFile.Text)' == ''"
+      Lines="namespace $(RootNamespace)%3B" />
+
+    <!-- Write an empty cs file if it doesn't exist(Custom body) -->
+    <WriteLinesToFile
+      File="%(LocalCompileFile.Identity)"
+      Overwrite="true"
+      Condition="!Exists('%(LocalCompileFile.Identity)') and '%(LocalCompileFile.Text)' != ''"
+      Lines="%(LocalCompileFile.Text)" />
+
+  </Target>
+
+</Project>

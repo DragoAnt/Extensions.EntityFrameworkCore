@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Entity conventions contracts for map enities with commom functionality </Description>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.Extensions.EntityConventions.Contacts\DragoAnt.Extensions.EntityConventions.Contacts.csproj" />
+  </ItemGroup> 
+
+</Project>

@@ -1,0 +1,13 @@
+<Project>
+
+  <PropertyGroup>
+    <SrcRootDir Condition="'$(SrcRootDir)'==''">$(MSBuildThisFileDirectory)../../../</SrcRootDir>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageAsProj_DragoAnt_Shared_Path Condition="'$(PackageAsProj_DragoAnt_Shared_Path)'==''">$(SrcRootDir)Shared/src/PackageAsProj.targets</PackageAsProj_DragoAnt_Shared_Path>
+  </PropertyGroup>
+
+  <Import Condition="Exists('$(PackageAsProj_DragoAnt_Shared_Path)')" Project="$(PackageAsProj_DragoAnt_Shared_Path)" />
+
+</Project>

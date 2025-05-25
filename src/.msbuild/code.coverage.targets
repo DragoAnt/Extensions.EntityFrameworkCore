@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+  <!--  Exclude from code coverage-->
+  <ItemGroup Condition="'$(ExcludeFromCodeCoverage)'=='true'">
+    <AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+CREATE VIEW dbo.ContactView
+    WITH SCHEMABINDING
+AS
+SELECT 1 AS [Version]
+GO
+
+
+GO
+CREATE VIEW dbo.CurrencyView
+    WITH SCHEMABINDING
+AS
+SELECT Iso3LetterCode
+FROM dbo.Currency
+GO

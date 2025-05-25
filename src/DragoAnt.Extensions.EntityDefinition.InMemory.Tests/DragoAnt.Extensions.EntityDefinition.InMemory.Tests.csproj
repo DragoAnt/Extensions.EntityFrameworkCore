@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.Extensions.EntityDefinition.Contracts\DragoAnt.Extensions.EntityDefinition.Contracts.csproj" />
+    <ProjectReference Include="..\DragoAnt.Extensions.EntityDefinition.EntityFrameworkCore\DragoAnt.Extensions.EntityDefinition.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\DragoAnt.Extensions.EntityDefinition.Model\DragoAnt.Extensions.EntityDefinition.Model.csproj" />
+    <ProjectReference Include="..\DragoAnt.Extensions.EntityDefinition\DragoAnt.Extensions.EntityDefinition.csproj" />
+    <ProjectReference Include="..\DragoAnt.Extensions.EntityFrameworkCore.Relational\DragoAnt.Extensions.EntityFrameworkCore.Relational.csproj" />
+  </ItemGroup>
+
+</Project>

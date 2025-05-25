@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+  <PropertyGroup>
+
+    <!-- Set IsTestsProject to true if the project file name ends with "Tests" -->
+    <IsTestsProject>$(MSBuildProjectName.EndsWith(".Tests"))</IsTestsProject>
+
+  </PropertyGroup>
+</Project>

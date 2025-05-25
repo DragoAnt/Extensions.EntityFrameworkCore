@@ -1,0 +1,25 @@
+<!--Add metadata to PackageReference to use ProjectReference instead of PackageReference-->
+<Project>
+  <PropertyGroup>
+    <_AsProj_DragoAnt_Shared>false</_AsProj_DragoAnt_Shared>
+    <_AsProj_DragoAnt_Shared Condition="'$(PackageAsProj_DragoAnt_Shared)'=='true'">true</_AsProj_DragoAnt_Shared>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Update="DragoAnt.Shared"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.Shared\DragoAnt.Shared.csproj"
+                      AsProj="$(_AsProj_DragoAnt_Shared)" />
+
+    <PackageReference Update="DragoAnt.Shared.AspNetCore"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.Shared.AspNetCore\DragoAnt.Shared.AspNetCore.csproj"
+                      AsProj="$(_AsProj_DragoAnt_Shared)" />
+
+    <PackageReference Update="DragoAnt.Shared.Csv"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.Shared.Csv\DragoAnt.Shared.Csv.csproj"
+                      AsProj="$(_AsProj_DragoAnt_Shared)" />
+
+    <PackageReference Update="DragoAnt.Shared.Mermaid"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.Shared.Mermaid\DragoAnt.Shared.Mermaid.csproj"
+                      AsProj="$(_AsProj_DragoAnt_Shared)" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+
+  <PropertyGroup Condition="'$(IsPackable)'=='true'">
+    <PackageId>$(MSBuildProjectName)</PackageId>
+    <Description Condition="'$(Description)'==''">$(MSBuildProjectName)</Description>
+
+    <IncludeSymbols>false</IncludeSymbols>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageVersion>$(Version)</PackageVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <RepositoryType Condition="'$(RepositoryType)'==''">git</RepositoryType>
+    <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+    <Authors>$(ManufacturerName)</Authors>
+  </PropertyGroup>
+
+  <!--Packages details-->
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)package.icon.png" Pack="true" PackagePath="\icon.png" Visible="false" />
+  </ItemGroup>
+
+</Project>

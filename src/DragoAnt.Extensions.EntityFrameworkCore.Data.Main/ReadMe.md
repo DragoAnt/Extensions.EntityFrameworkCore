@@ -1,0 +1,1 @@
+dotnet ef migrations add migration -p DragoAnt.Extensions.EntityFrameworkCore.Data.Main -c MainDbContext

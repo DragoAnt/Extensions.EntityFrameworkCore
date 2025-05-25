@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Definitions Marmaid Flowchart</Description>
+    <Nullable>enable</Nullable>
+  </PropertyGroup> 
+
+  <ItemGroup>
+    <PackageReference Include="DragoAnt.Shared" />
+    <PackageReference Include="DragoAnt.Shared.Mermaid" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.Extensions.EntityDefinition.Contracts\DragoAnt.Extensions.EntityDefinition.Contracts.csproj" />
+    <ProjectReference Include="..\DragoAnt.Extensions.EntityDefinition\DragoAnt.Extensions.EntityDefinition.csproj" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <Compile Remove="Types\**" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Types\**" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <None Remove="Types\**" />
+  </ItemGroup>
+
+</Project>

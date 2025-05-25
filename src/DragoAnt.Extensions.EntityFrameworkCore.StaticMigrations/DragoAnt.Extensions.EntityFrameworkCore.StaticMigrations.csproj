@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Entity Framework Core static migrations</Description>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.Extensions.EntityFrameworkCore.Relational\DragoAnt.Extensions.EntityFrameworkCore.Relational.csproj" />
+    <ProjectReference Include="..\DragoAnt.Extensions.StaticMigrations\DragoAnt.Extensions.StaticMigrations.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DragoAnt.Shared" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+  </ItemGroup>
+
+</Project>

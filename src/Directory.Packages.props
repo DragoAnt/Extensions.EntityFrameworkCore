@@ -1,0 +1,82 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DragoAntSharedVersion>9.0.0</DragoAntSharedVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(IsNET6)'=='True'">
+    <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">6.0.13</EntityFrameworkCoreVersion>
+    <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">6.0.0</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsNET7)'=='True'">
+    <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">7.0.2</EntityFrameworkCoreVersion>
+    <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">7.0.0</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsNET8)'=='True'">
+    <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">8.0.0</EntityFrameworkCoreVersion>
+    <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">8.0.0</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsNET9)'=='True'">
+    <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">9.0.0</EntityFrameworkCoreVersion>
+    <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">9.0.0</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsNET10)'=='True'">
+    <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">10.0.0</EntityFrameworkCoreVersion>
+    <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">10.0.0</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsNET11)'=='True'">
+    <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">11.0.0</EntityFrameworkCoreVersion>
+    <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">11.0.0</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsNET12)'=='True'">
+    <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">12.0.0</EntityFrameworkCoreVersion>
+    <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">12.0.0</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsNET13)'=='True'">
+    <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">13.0.0</EntityFrameworkCoreVersion>
+    <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">13.0.0</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsNET14)'=='True'">
+    <EntityFrameworkCoreVersion Condition="'$(EntityFrameworkCoreVersion)'==''">14.0.0</EntityFrameworkCoreVersion>
+    <MicrosoftExtensionsVersion Condition="'$(MicrosoftExtensionsVersion)'==''">14.0.0</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+
+    <PackageVersion Include="DragoAnt.Shared" Version="$(DragoAntSharedVersion)" />
+    <PackageVersion Include="DragoAnt.Shared.Csv" Version="$(DragoAntSharedVersion)" />
+    <PackageVersion Include="DragoAnt.Shared.AspNetCore" Version="$(DragoAntSharedVersion)" />
+    <PackageVersion Include="DragoAnt.Shared.Mermaid" Version="$(DragoAntSharedVersion)" />
+
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(MicrosoftExtensionsVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="$(MicrosoftExtensionsVersion)" />
+
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Proxies" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="$(EntityFrameworkCoreVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="$(EntityFrameworkCoreVersion)" />
+
+    <PackageVersion Include="NSubstitute" Version="5.3.0" />
+    <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.17" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.4" />
+    <PackageVersion Include="CsvHelper" Version="33.0.1" />
+    <PackageVersion Include="DragoAnt.Extensions.T4" Version="1.0.1" />
+    <PackageVersion Include="FluentAssertions" Version="7.2.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.0" />
+    <PackageVersion Include="Verify" Version="30.1.0" />
+    <PackageVersion Include="Verify.DiffPlex" Version="3.1.2" />
+    <PackageVersion Include="Verify.XunitV3" Version="30.1.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.0" />
+    <PackageVersion Include="xunit.v3" Version="2.0.2" />
+  </ItemGroup>
+</Project>
