@@ -1,1 +1,1 @@
-# .EntityFramework Core extensions
+# EntityFramework Core extensions
