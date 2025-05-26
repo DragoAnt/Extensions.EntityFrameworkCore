@@ -10,7 +10,7 @@ namespace DragoAnt.EntityDefinition.InMemory.Tests;
 
 public class EntityDefinitionsTests
 {
-    private const string DbName = "stenn_efcore_tests_in_memory";
+    private const string DbName = "efcore_tests_in_memory";
     private readonly DefinitionDbContext _dbContext;
 
     public EntityDefinitionsTests()

@@ -15,7 +15,7 @@ public abstract class SqlServerEntityTestsBase
     protected readonly DefinitionDbContext DbContext;
     protected readonly IServiceProvider ServiceProvider;
 
-    private const string DbName = "stenn_definitions_efcore_tests";
+    private const string DbName = "definitions_efcore_tests";
 
     protected static string GetConnectionString(string dbName)
     {

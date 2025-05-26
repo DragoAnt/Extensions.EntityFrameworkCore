@@ -14,7 +14,7 @@ namespace DragoAnt.EntityFrameworkCore.InMemory.Tests;
 
 public class MigrationsTest
 {
-    private const string DbName = "stenn_efcore_tests_in_memory";
+    private const string DbName = "efcore_tests_in_memory";
     private readonly InitialDbContext _dbContextInitial;
 
     private readonly MainDbContext _dbContextMain;
