@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Definitions AspNet Core extensions</Description>
+    <Nullable>enable</Nullable>
+  </PropertyGroup> 
+
+  <ItemGroup>
+    <PackageReference Include="DragoAnt.Shared.AspNetCore" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.EntityDefinition.Contracts\DragoAnt.EntityDefinition.Contracts.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityDefinition.EntityFrameworkCore\DragoAnt.EntityDefinition.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityDefinition\DragoAnt.EntityDefinition.csproj" />
+  </ItemGroup>
+
+</Project>

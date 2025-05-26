@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Description>Dependency injection extensions for DragoAnt.EntityFrameworkCore</Description>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="DragoAnt.Shared" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.StaticMigrations\DragoAnt.EntityFrameworkCore.StaticMigrations.csproj" />
+    </ItemGroup>
+
+</Project>

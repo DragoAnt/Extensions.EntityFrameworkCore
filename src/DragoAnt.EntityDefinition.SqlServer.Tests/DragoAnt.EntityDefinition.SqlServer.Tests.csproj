@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="DragoAnt.Shared.Mermaid" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.EntityDefinition.Contracts\DragoAnt.EntityDefinition.Contracts.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityDefinition.EntityFrameworkCore.Flowchart\DragoAnt.EntityDefinition.EntityFrameworkCore.Flowchart.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityDefinition.EntityFrameworkCore.Relational\DragoAnt.EntityDefinition.EntityFrameworkCore.Relational.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityDefinition.EntityFrameworkCore\DragoAnt.EntityDefinition.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityDefinition.Flowchart\DragoAnt.EntityDefinition.Flowchart.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityDefinition.Model\DragoAnt.EntityDefinition.Model.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityDefinition\DragoAnt.EntityDefinition.csproj" />
+  </ItemGroup>
+
+</Project>

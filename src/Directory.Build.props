@@ -17,8 +17,8 @@
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
   </PropertyGroup>
 
-  <Import  Condition="'$(IsTfmConstantsImported)'!='True'" Project="$(MSBuildThisFileDirectory).msbuild\tfm.constants.props" />
-  
+  <Import Condition="'$(IsTfmConstantsImported)'!='True'" Project="$(MSBuildThisFileDirectory).msbuild\tfm.constants.props" />
+
   <Import Project="$(MSBuildThisFileDirectory).msbuild\local.directory.secrets.props" />
   <Import Project="$(MSBuildThisFileDirectory).msbuild\tests.project.props" />
   <Import Project="$(MSBuildThisFileDirectory).msbuild\product.props" />

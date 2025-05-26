@@ -3,19 +3,7 @@
 <Project>
 
   <PropertyGroup>
-    <VersionMajorNum>0</VersionMajorNum>
-    <VersionMajorNum Condition="'$(IsNET7)'=='True'">7</VersionMajorNum>
-    <VersionMajorNum Condition="'$(IsNET8)'=='True'">8</VersionMajorNum>
-    <VersionMajorNum Condition="'$(IsNET9)'=='True'">9</VersionMajorNum>
-    <VersionMajorNum Condition="'$(IsNET10)'=='True'">10</VersionMajorNum>
-    <VersionMajorNum Condition="'$(IsNET11)'=='True'">11</VersionMajorNum>
-    <VersionMajorNum Condition="'$(IsNET12)'=='True'">12</VersionMajorNum>
-    <VersionMajorNum Condition="'$(IsNET13)'=='True'">13</VersionMajorNum>
-    <VersionMajorNum Condition="'$(IsNET14)'=='True'">14</VersionMajorNum>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <Version>$(VersionMajorNum).0.0</Version>
+    <Version>9.0.0</Version>
   </PropertyGroup>
 
 </Project>

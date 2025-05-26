@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Project>
-
   <Import Project="$(MSBuildThisFileDirectory)Directory.Packages.Metadata.targets" />
 
   <Import Project="$(MSBuildThisFileDirectory).msbuild\package.targets" />
@@ -13,4 +12,5 @@
 
   <Import Project="$(MSBuildThisFileDirectory).msbuild\tests.project.targets" />
   <Import Project="$(MSBuildThisFileDirectory).msbuild\test.project.internalsVisibleTo.targets" />
+  
 </Project>

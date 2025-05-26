@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Initial\DragoAnt.EntityFrameworkCore.Data.Initial.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Main\DragoAnt.EntityFrameworkCore.Data.Main.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.InMemory.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.InMemory.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Testing\DragoAnt.EntityFrameworkCore.Testing.csproj" />
+  </ItemGroup>
+
+</Project>

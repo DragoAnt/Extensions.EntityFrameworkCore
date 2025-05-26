@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedMigrations\**\*.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Initial\DragoAnt.EntityFrameworkCore.Data.Initial.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.HistoricalMigrations\DragoAnt.EntityFrameworkCore.HistoricalMigrations.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.StaticMigrations\DragoAnt.EntityFrameworkCore.StaticMigrations.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore\DragoAnt.EntityFrameworkCore.csproj" />     
+  </ItemGroup>
+
+</Project>

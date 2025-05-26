@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Definitions Entity Framework Core implementation</Description>
+    <Nullable>enable</Nullable>
+  </PropertyGroup> 
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.EntityDefinition.Contracts\DragoAnt.EntityDefinition.Contracts.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityDefinition\DragoAnt.EntityDefinition.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore\DragoAnt.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

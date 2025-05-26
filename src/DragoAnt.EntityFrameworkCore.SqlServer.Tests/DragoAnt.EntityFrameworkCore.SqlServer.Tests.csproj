@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Initial\DragoAnt.EntityFrameworkCore.Data.Initial.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Main.EF6Initial\DragoAnt.EntityFrameworkCore.Data.Main.EF6Initial.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Main.HistoricalInitial\DragoAnt.EntityFrameworkCore.Data.Main.HistoricalInitial.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute\DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Step1PlusStep2\DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Step1PlusStep2.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Main\DragoAnt.EntityFrameworkCore.Data.Main.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer\DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Tests\DragoAnt.EntityFrameworkCore.Tests.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Description>Dependency injection extensions for DragoAnt.AspNetCore.OData.Versioning</Description>
+        <Nullable>enable</Nullable>
+        <NoWarn>EF1001;$(NoWarn)</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+    </ItemGroup>
+
+</Project>
