@@ -1,1 +1,1 @@
-# Shared common nuget packages
+# .EntityFramework Core extensions
