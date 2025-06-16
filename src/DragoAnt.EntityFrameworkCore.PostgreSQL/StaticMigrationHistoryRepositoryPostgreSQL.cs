@@ -1,14 +1,10 @@
-﻿//Based on: SqlServerHistoryRepository
-// Copyright (c) .NET Foundation. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-
 using System.Text;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.StaticMigrations.StaticMigrations;
 
-namespace DragoAnt.EntityFrameworkCore.SqlServer;
+namespace DragoAnt.EntityFrameworkCore.PostgreSQL;
 
 /// <summary>
 ///     <para>
@@ -21,9 +17,9 @@ namespace DragoAnt.EntityFrameworkCore.SqlServer;
 ///         The implementation does not need to be thread-safe.
 ///     </para>
 /// </summary>
-public class StaticMigrationHistoryRepositorySqlServer : StaticMigrationHistoryRepository
+public class StaticMigrationHistoryRepositoryPostgreSQL : StaticMigrationHistoryRepository
 {
-    public StaticMigrationHistoryRepositorySqlServer(HistoryRepositoryDependencies dependencies)
+    public StaticMigrationHistoryRepositoryPostgreSQL(HistoryRepositoryDependencies dependencies)
         : base(dependencies)
     {
     }
@@ -33,8 +29,8 @@ public class StaticMigrationHistoryRepositorySqlServer : StaticMigrationHistoryR
         get
         {
             var stringTypeMapping = Dependencies.TypeMappingSource.GetMapping(typeof(string));
-            return "SELECT OBJECT_ID(" + stringTypeMapping.GenerateSqlLiteral(SqlGenerationHelper.DelimitIdentifier(TableName, TableSchema)) + ")"
-                   + SqlGenerationHelper.StatementTerminator;
+            return $"SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = '{stringTypeMapping.GenerateSqlLiteral(TableSchema)}' AND table_name = '{stringTypeMapping.GenerateSqlLiteral(TableName)}')" +
+                   SqlGenerationHelper.StatementTerminator;
         }
     }
 
@@ -44,7 +40,7 @@ public class StaticMigrationHistoryRepositorySqlServer : StaticMigrationHistoryR
     ///     any release. You should only use it directly in your code with extreme caution and knowing that
     ///     doing so can result in application failures when updating to a new Entity Framework Core release.
     /// </summary>
-    protected override bool InterpretExistsResult(object? value) 
+    protected override bool InterpretExistsResult(object? value)
         => value != null && value != DBNull.Value;
 
     /// <summary>
@@ -58,10 +54,13 @@ public class StaticMigrationHistoryRepositorySqlServer : StaticMigrationHistoryR
         var stringTypeMapping = Dependencies.TypeMappingSource.GetMapping(typeof(string));
 
         var builder = new StringBuilder()
-            .Append("IF OBJECT_ID(")
-            .Append(stringTypeMapping.GenerateSqlLiteral(SqlGenerationHelper.DelimitIdentifier(TableName, TableSchema)))
-            .AppendLine(") IS NULL")
-            .AppendLine("BEGIN");
+            .AppendLine("DO $$")
+            .AppendLine("BEGIN")
+            .AppendLine("    IF NOT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = '")
+            .Append(stringTypeMapping.GenerateSqlLiteral(SqlGenerationHelper.DelimitIdentifier(TableSchema!)))
+            .Append("' AND table_name = '")
+            .Append(stringTypeMapping.GenerateSqlLiteral(SqlGenerationHelper.DelimitIdentifier(TableName)))
+            .AppendLine("') THEN");
 
         using (var reader = new StringReader(GetCreateScript()))
         {
@@ -79,14 +78,15 @@ public class StaticMigrationHistoryRepositorySqlServer : StaticMigrationHistoryR
 
                 if (line.Length != 0)
                 {
-                    builder.Append("    ").Append(line);
+                    builder.Append("        ").Append(line);
                 }
             }
         }
 
-        builder.AppendLine().Append("END")
-            .AppendLine(SqlGenerationHelper.StatementTerminator);
+        builder.AppendLine()
+            .AppendLine("    END IF;")
+            .AppendLine("END $$;");
 
         return builder.ToString();
     }
-}
+} 

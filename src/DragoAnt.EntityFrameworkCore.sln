@@ -126,6 +126,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".slnItems", ".slnItems", "{
 		Directory.Packages.Metadata.targets = Directory.Packages.Metadata.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragoAnt.EntityFrameworkCore.PostgreSQL", "DragoAnt.EntityFrameworkCore.PostgreSQL\DragoAnt.EntityFrameworkCore.PostgreSQL.csproj", "{006FAC19-B07D-4562-9A2A-9FF7ACCC688E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragoAnt.EntityFrameworkCore.PostgreSQL.Extensions.DependencyInjection", "DragoAnt.EntityFrameworkCore.PostgreSQL.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.PostgreSQL.Extensions.DependencyInjection.csproj", "{B5B7C862-D7C3-4E0D-93BD-8D6DD602B7EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +287,14 @@ Global
 		{4C8823C1-CBB9-4EFF-A0A4-D7C51B63CD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C8823C1-CBB9-4EFF-A0A4-D7C51B63CD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C8823C1-CBB9-4EFF-A0A4-D7C51B63CD7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006FAC19-B07D-4562-9A2A-9FF7ACCC688E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006FAC19-B07D-4562-9A2A-9FF7ACCC688E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006FAC19-B07D-4562-9A2A-9FF7ACCC688E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006FAC19-B07D-4562-9A2A-9FF7ACCC688E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B7C862-D7C3-4E0D-93BD-8D6DD602B7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B7C862-D7C3-4E0D-93BD-8D6DD602B7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B7C862-D7C3-4E0D-93BD-8D6DD602B7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B7C862-D7C3-4E0D-93BD-8D6DD602B7EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
