@@ -50,7 +50,7 @@ internal sealed class StaticMigrationOptionsExtension : IDbContextOptionsExtensi
             return b;
         }
 
-        var builder = new StaticMigrationBuilder();
+        var builder = new StaticMigrationBuilder(_options.SqlScriptsPath);
 
         if (_options.EnableEnumTables)
         {
@@ -73,7 +73,7 @@ internal sealed class StaticMigrationOptionsExtension : IDbContextOptionsExtensi
 
         services.TryAddScoped<IStaticMigrationsService, StaticMigrationsService>();
 
-        var relationalOverrided = OverrideService<IRelationalDatabaseCreator>(services, (provider, creator) =>
+        var relationalOverride = OverrideService<IRelationalDatabaseCreator>(services, (provider, creator) =>
             new RelationalDatabaseCreatorWithStaticMigrations(creator,
                 provider,
                 provider.GetRequiredService<RelationalDatabaseCreatorDependencies>(),
@@ -81,7 +81,7 @@ internal sealed class StaticMigrationOptionsExtension : IDbContextOptionsExtensi
                 provider.GetRequiredService<IMigrationCommandExecutor>(),
                 provider.GetRequiredService<IMigrationsSqlGenerator>()));
 
-        if (relationalOverrided)
+        if (relationalOverride)
         {
             return;
         }

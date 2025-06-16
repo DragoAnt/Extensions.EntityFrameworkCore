@@ -68,8 +68,7 @@ public class StaticMigrationHistoryRepositorySqlServer : StaticMigrationHistoryR
         using (var reader = new StringReader(GetCreateScript()))
         {
             var first = true;
-            string? line;
-            while ((line = reader.ReadLine()) != null)
+            while (reader.ReadLine() is { } line)
             {
                 if (first)
                 {

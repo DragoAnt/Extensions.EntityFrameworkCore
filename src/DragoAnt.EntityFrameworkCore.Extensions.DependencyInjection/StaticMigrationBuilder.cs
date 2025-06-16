@@ -12,8 +12,18 @@ namespace DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
 /// </summary>
 public sealed class StaticMigrationBuilder
 {
+    internal StaticMigrationBuilder(string sqlScriptsPath)
+    {
+        SqlScriptsPath = sqlScriptsPath;
+    }
+
     internal StaticMigrationCollection<IStaticSqlMigration, DbContext> SQLMigrations { get; } = new();
 
+    /// <summary>
+    /// Base directory location of static sql scripts in assembly with migrations.
+    /// </summary>
+    internal string SqlScriptsPath { get; }
+    
     public void AddResSql(string name, string? applyRelativeResFilePath, string? revertRelativeResFilePath, Assembly? assembly = null, Func<StaticMigrationConditionOptions, bool>? condition = null)
     {
         assembly ??= Assembly.GetCallingAssembly();

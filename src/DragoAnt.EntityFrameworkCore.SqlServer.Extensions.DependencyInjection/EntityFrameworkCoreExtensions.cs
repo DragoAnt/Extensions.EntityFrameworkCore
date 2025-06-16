@@ -18,11 +18,12 @@ public static class EntityFrameworkCoreExtensions
     /// <param name="initMigrations"></param>
     /// <param name="optionsInit">Static migrations options initialization</param>
     /// <returns></returns>
-    public static DbContextOptionsBuilder UseStaticMigrationsSqlServer(this DbContextOptionsBuilder optionsBuilder,
+    public static DbContextOptionsBuilder UseStaticMigrationsSqlServer(
+        this DbContextOptionsBuilder optionsBuilder,
         Action<StaticMigrationBuilder> initMigrations,
         Action<StaticMigrationsOptions>? optionsInit = null)
     {
-        CommonExtensions.UseStaticMigrations(Configurator, optionsBuilder,initMigrations, optionsInit);
+        CommonExtensions.UseStaticMigrations(Configurator, optionsBuilder, initMigrations, optionsInit);
 
         return optionsBuilder;
     }
