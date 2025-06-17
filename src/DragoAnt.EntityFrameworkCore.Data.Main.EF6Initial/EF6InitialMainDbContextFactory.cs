@@ -2,11 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Static;
 using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer;
 using DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection;
 
 namespace DragoAnt.EntityFrameworkCore.Data.Main.EF6Initial;
 

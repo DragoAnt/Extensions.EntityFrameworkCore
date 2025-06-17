@@ -8,9 +8,7 @@ using DragoAnt.EntityFrameworkCore.Data.Initial.Migrations.Static;
 using DragoAnt.EntityFrameworkCore.Data.Main;
 using DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Static;
 using DragoAnt.EntityFrameworkCore.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.InMemory.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.Testing;
 
 namespace DragoAnt.EntityFrameworkCore.InMemory.Tests;
@@ -61,11 +59,11 @@ public class MigrationsTest
         await EnsureCreated(_dbContextMain);
 
         var actual = await _dbContextMain.Set<Currency>().ToListAsync();
-        var expected = Data.Main.StaticMigrations.DictEntities.CurrencyDeclaration.GetActual();
+        var expected = Data.Main.DictEntities.CurrencyDeclaration.GetActual();
         actual.Should().BeEquivalentTo(expected);
             
         var actualRoles = await _dbContextMain.Set<Role>().ToListAsync();
-        var expectedRoles = Data.Main.StaticMigrations.DictEntities.RoleDeclaration.GetActual();
+        var expectedRoles = Data.Main.DictEntities.RoleDeclaration.GetActual();
         actualRoles.Should().BeEquivalentTo(expectedRoles, options => options
             .Excluding(x => ((ICreateAuditedEntityConvention)x).Created)
             .Excluding(x => ((IUpdateAuditedEntityConvention)x).ModifiedAt)

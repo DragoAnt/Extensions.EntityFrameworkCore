@@ -4,12 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.Data.Main;
 using DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Static;
-using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer;
-using DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.Migrations.Static;
 using DragoAnt.EntityFrameworkCore.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection;
@@ -116,11 +112,11 @@ public class HistoricalMigrationsRegistrationTests: TestBase
         await EnsureCreated(_dbContextMain);
 
         var actual = await _dbContextMain.Set<Main.Currency>().ToListAsync();
-        var expected = Main.StaticMigrations.DictEntities.CurrencyDeclaration.GetActual();
+        var expected = Main.DictEntities.CurrencyDeclaration.GetActual();
         actual.Should().BeEquivalentTo(expected);
 
         var actualRoles = await _dbContextMain.Set<Role>().OrderBy(x => x.Name).ToListAsync();
-        var expectedRoles = Main.StaticMigrations.DictEntities.RoleDeclaration.GetActual();
+        var expectedRoles = Main.DictEntities.RoleDeclaration.GetActual();
         actualRoles.Should().BeEquivalentTo(expectedRoles, options => options
             .Excluding(x => ((ICreateAuditedEntityConvention)x).Created)
             .Excluding(x => ((IUpdateAuditedEntityConvention)x).ModifiedAt)
@@ -134,11 +130,11 @@ public class HistoricalMigrationsRegistrationTests: TestBase
         await EnsureCreated(_dbContextMainTypeRegistration);
 
         var actual = await _dbContextMainTypeRegistration.Set<MainWithoutAttribute.Currency>().ToListAsync();
-        var expected = MainWithoutAttribute.StaticMigrations.DictEntities.CurrencyDeclaration.GetActual();
+        var expected = MainWithoutAttribute.DictEntities.CurrencyDeclaration.GetActual();
         actual.Should().BeEquivalentTo(expected);
 
         var actualRoles = await _dbContextMainTypeRegistration.Set<MainWithoutAttribute.Role>().OrderBy(x => x.Name).ToListAsync();
-        var expectedRoles = MainWithoutAttribute.StaticMigrations.DictEntities.RoleDeclaration.GetActual();
+        var expectedRoles = MainWithoutAttribute.DictEntities.RoleDeclaration.GetActual();
         actualRoles.Should().BeEquivalentTo(expectedRoles, options => options
             .Excluding(x => ((ICreateAuditedEntityConvention)x).Created)
             .Excluding(x => ((IUpdateAuditedEntityConvention)x).ModifiedAt)
