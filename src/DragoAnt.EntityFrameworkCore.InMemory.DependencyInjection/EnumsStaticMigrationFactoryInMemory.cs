@@ -1,8 +1,8 @@
-using Microsoft.EntityFrameworkCore;
 using DragoAnt.EntityFrameworkCore.StaticMigrations;
 using DragoAnt.EntityFrameworkCore.StaticMigrations.Enums;
+using Microsoft.EntityFrameworkCore;
 
-namespace DragoAnt.EntityFrameworkCore.InMemory.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection;
 
 public class EnumsStaticMigrationFactoryInMemory : IEnumsStaticMigrationFactory
 {

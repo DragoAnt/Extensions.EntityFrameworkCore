@@ -1,4 +1,4 @@
-namespace DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.DependencyInjection;
 
 public sealed class StaticMigrationsOptions
 {

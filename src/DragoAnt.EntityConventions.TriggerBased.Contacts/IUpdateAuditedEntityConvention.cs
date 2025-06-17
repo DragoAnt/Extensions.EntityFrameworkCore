@@ -1,4 +1,6 @@
-﻿namespace DragoAnt.EntityConventions.Contacts.TriggerBased;
+﻿using DragoAnt.EntityConventions.Contacts;
+
+namespace DragoAnt.EntityConventions.TriggerBased.Contacts;
 
 /// <summary>
 /// Entity with creation audited property Modified

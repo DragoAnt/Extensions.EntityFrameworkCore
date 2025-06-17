@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Initial\DragoAnt.EntityFrameworkCore.Data.Initial.csproj" />
-    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection\DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection.csproj" />
     <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.HistoricalMigrations\DragoAnt.EntityFrameworkCore.HistoricalMigrations.csproj" />
     <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.StaticMigrations\DragoAnt.EntityFrameworkCore.StaticMigrations.csproj" />
     <ProjectReference Include="..\DragoAnt.EntityFrameworkCore\DragoAnt.EntityFrameworkCore.csproj" />     

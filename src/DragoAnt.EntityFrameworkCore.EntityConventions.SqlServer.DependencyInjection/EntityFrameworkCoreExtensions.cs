@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using DragoAnt.EntityFrameworkCore.EntityConventions.Extensions.DependencyInjection;
+﻿using DragoAnt.EntityFrameworkCore.EntityConventions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 
-namespace DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection;
 
 /// <summary>
 ///     Dependency injection extensions for register Entity Framework core static migrations

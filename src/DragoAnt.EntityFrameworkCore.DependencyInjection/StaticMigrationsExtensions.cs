@@ -1,7 +1,7 @@
-﻿using DragoAnt.StaticMigrations.MigrationConditions;
-using System.Reflection;
+﻿using System.Reflection;
+using DragoAnt.StaticMigrations.MigrationConditions;
 
-namespace DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.DependencyInjection;
 
 /// <summary>
 ///  Standard extensions for static sql migrations based on guidlines that sql migrations stored in folder '<see cref="StaticMigrationBuilder.SqlScriptsPath"/>'  

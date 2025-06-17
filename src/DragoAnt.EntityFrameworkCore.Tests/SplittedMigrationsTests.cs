@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.HistoricalMigrations;
-using DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.Tests.HistoricalMigrations;
 
 namespace DragoAnt.EntityFrameworkCore.Tests;

@@ -1,4 +1,4 @@
-﻿using DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
+﻿using DragoAnt.EntityFrameworkCore.DependencyInjection;
 
 namespace DragoAnt.EntityFrameworkCore.Data.Initial.Migrations.Static;
 

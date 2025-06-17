@@ -11,7 +11,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection.csproj" />      
+      <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.DependencyInjection\DragoAnt.EntityFrameworkCore.DependencyInjection.csproj" />
+      <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.SqlServer\DragoAnt.EntityFrameworkCore.SqlServer.csproj" />
     </ItemGroup>
 
 </Project>

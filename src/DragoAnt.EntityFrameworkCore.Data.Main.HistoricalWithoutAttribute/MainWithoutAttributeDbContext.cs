@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using DragoAnt.EntityFrameworkCore.Data.Main.Configurations;
+﻿using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.Configurations;
+using Microsoft.EntityFrameworkCore;
 
 namespace DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute;
 

@@ -1,12 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.Data.Initial;
-using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.Data.Initial.DictEntities;
+using DragoAnt.EntityFrameworkCore.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer;
-using DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection;
 using DragoAnt.StaticMigrations.MigrationConditions;
 
 namespace DragoAnt.EntityFrameworkCore.SqlServer.Tests;
@@ -79,7 +80,7 @@ public class ConditionalStaticMigrationsTest : TestBase
     private async Task VerifyConditionalMigrationsExecuted()
     {
         var actual = await _dbContextInitial.Set<CurrencyV1>().ToListAsync();
-        var expected = Data.Initial.StaticMigrations.DictEntities.CurrencyDeclaration.GetActual();
+        var expected = CurrencyDeclaration.GetActual();
         actual.Should().BeEquivalentTo(expected);
 
         var actualView = await _dbContextInitial.Set<VCurrency>().ToListAsync();
@@ -89,7 +90,7 @@ public class ConditionalStaticMigrationsTest : TestBase
     private async Task VerifyConditionalMigrationsNotExecuted()
     {
         var actual = await _dbContextInitial.Set<CurrencyV1>().ToListAsync();
-        var expected = Data.Initial.StaticMigrations.DictEntities.CurrencyDeclaration.GetActual();
+        var expected = CurrencyDeclaration.GetActual();
         actual.Should().BeEquivalentTo(expected);
 
         Action getVCurrency = () => _dbContextInitial.Set<VCurrency>().ToList();

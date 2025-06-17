@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection;
 
 /// <summary>
 ///     Dependency injection extensions for register Entity Framework core static migrations

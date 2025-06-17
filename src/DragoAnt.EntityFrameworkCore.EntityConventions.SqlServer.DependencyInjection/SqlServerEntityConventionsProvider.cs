@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection;
 
 public sealed class SqlServerEntityConventionsProvider : RelationalDbContextOptionsConfigurator, IEntityConventionsProviderConfigurator
 {

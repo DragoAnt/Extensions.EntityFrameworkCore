@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection;
 
 public class EntityConventionsProviderServiceSqlServer : IEntityConventionsProviderService
 {

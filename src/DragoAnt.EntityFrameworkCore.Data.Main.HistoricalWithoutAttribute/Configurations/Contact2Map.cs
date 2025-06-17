@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute;
 
-namespace DragoAnt.EntityFrameworkCore.Data.Main.Configurations;
+namespace DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.Configurations;
 
 public class Contact2Map: IEntityTypeConfiguration<Contact2>
 {

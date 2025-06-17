@@ -28,13 +28,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.Data.Main", "DragoAnt.EntityFrameworkCore.Data.Main\DragoAnt.EntityFrameworkCore.Data.Main.csproj", "{9AC4BAED-EE42-4E9A-94C8-71B5A43EA764}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection", "DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection.csproj", "{602B6A0A-AE67-49CF-A9FD-2A1934E8BC36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.DependencyInjection", "DragoAnt.EntityFrameworkCore.DependencyInjection\DragoAnt.EntityFrameworkCore.DependencyInjection.csproj", "{602B6A0A-AE67-49CF-A9FD-2A1934E8BC36}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection", "DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection.csproj", "{5BB6F7AA-78F8-4C96-BCBC-E7130B13C505}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection", "DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection\DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection.csproj", "{5BB6F7AA-78F8-4C96-BCBC-E7130B13C505}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.StaticMigrations", "DragoAnt.StaticMigrations\DragoAnt.StaticMigrations.csproj", "{863A163D-F238-4EA3-83A0-64DA8F01E05C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.InMemory.Extensions.DependencyInjection", "DragoAnt.EntityFrameworkCore.InMemory.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.InMemory.Extensions.DependencyInjection.csproj", "{47F66573-8405-44C1-A58C-93D9CF3D72F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection", "DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection\DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection.csproj", "{47F66573-8405-44C1-A58C-93D9CF3D72F2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.InMemory.Tests", "DragoAnt.EntityFrameworkCore.InMemory.Tests\DragoAnt.EntityFrameworkCore.InMemory.Tests.csproj", "{A78EA959-6F65-498F-A5B7-5CB07747C0EA}"
 EndProject
@@ -54,7 +54,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.HistoricalMigrations", "DragoAnt.EntityFrameworkCore.HistoricalMigrations\DragoAnt.EntityFrameworkCore.HistoricalMigrations.csproj", "{EBB1B628-BA84-4AA9-94B8-90CE824A3694}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection", "DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection.csproj", "{4CD745FF-C7ED-467E-A273-3815D4A40FAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection", "DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection\DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection.csproj", "{4CD745FF-C7ED-467E-A273-3815D4A40FAB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityConventions.TriggerBased.Contacts", "DragoAnt.EntityConventions.TriggerBased.Contacts\DragoAnt.EntityConventions.TriggerBased.Contacts.csproj", "{8C96DFD8-9286-4DB8-AD8F-9AF4AF5C846F}"
 EndProject
@@ -62,9 +62,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.Data.Main.HistoricalInitial", "DragoAnt.EntityFrameworkCore.Data.Main.HistoricalInitial\DragoAnt.EntityFrameworkCore.Data.Main.HistoricalInitial.csproj", "{94A58282-915A-4174-9D30-9A46A28E6D5B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.EntityConventions.Extensions.DependencyInjection", "DragoAnt.EntityFrameworkCore.EntityConventions.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.EntityConventions.Extensions.DependencyInjection.csproj", "{8B80B54A-6EB7-46A6-8C3C-1E607B094E3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.EntityConventions.DependencyInjection", "DragoAnt.EntityFrameworkCore.EntityConventions.DependencyInjection\DragoAnt.EntityFrameworkCore.EntityConventions.DependencyInjection.csproj", "{8B80B54A-6EB7-46A6-8C3C-1E607B094E3D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection", "DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection.csproj", "{43720D28-FD68-4953-A360-5D02CF9C67A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection", "DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection\DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection.csproj", "{43720D28-FD68-4953-A360-5D02CF9C67A2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer", "DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer\DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer.csproj", "{B5A6B581-554B-4584-AD6D-C0E514E13E0E}"
 EndProject
@@ -114,7 +114,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".slnItems", ".slnItems", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragoAnt.EntityFrameworkCore.PostgreSQL", "DragoAnt.EntityFrameworkCore.PostgreSQL\DragoAnt.EntityFrameworkCore.PostgreSQL.csproj", "{006FAC19-B07D-4562-9A2A-9FF7ACCC688E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragoAnt.EntityFrameworkCore.PostgreSQL.Extensions.DependencyInjection", "DragoAnt.EntityFrameworkCore.PostgreSQL.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.PostgreSQL.Extensions.DependencyInjection.csproj", "{B5B7C862-D7C3-4E0D-93BD-8D6DD602B7EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection", "DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection\DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection.csproj", "{B5B7C862-D7C3-4E0D-93BD-8D6DD602B7EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{328F904C-E00A-4AAE-8B8E-C1BE80167E9A}"
 EndProject

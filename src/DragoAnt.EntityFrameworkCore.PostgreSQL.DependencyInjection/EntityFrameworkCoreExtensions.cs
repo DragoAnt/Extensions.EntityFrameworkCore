@@ -1,15 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
-using CommonExtensions = DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection.EntityFrameworkCoreExtensions;
+using DragoAnt.EntityFrameworkCore.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using CommonExtensions = DragoAnt.EntityFrameworkCore.DependencyInjection.EntityFrameworkCoreExtensions;
 
-namespace DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection;
 
 /// <summary>
 ///     Dependency injection extensions for register Entity Framework core static migrations
 /// </summary>
 public static class EntityFrameworkCoreExtensions
 {
-    private static readonly SqlServerMigrations Configurator = new();
+    private static readonly PostgreSQLMigrations Configurator = new();
 
     /// <summary>
     ///     Use static migrations with specified db context
@@ -18,7 +18,7 @@ public static class EntityFrameworkCoreExtensions
     /// <param name="initMigrations"></param>
     /// <param name="optionsInit">Static migrations options initialization</param>
     /// <returns></returns>
-    public static DbContextOptionsBuilder UseStaticMigrationsSqlServer(
+    public static DbContextOptionsBuilder UseStaticMigrationsPostgreSQL(
         this DbContextOptionsBuilder optionsBuilder,
         Action<StaticMigrationBuilder> initMigrations,
         Action<StaticMigrationsOptions>? optionsInit = null)
@@ -27,4 +27,4 @@ public static class EntityFrameworkCoreExtensions
 
         return optionsBuilder;
     }
-}
+} 

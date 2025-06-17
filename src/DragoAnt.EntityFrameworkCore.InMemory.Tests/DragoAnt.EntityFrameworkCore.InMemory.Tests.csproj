@@ -14,8 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Initial\DragoAnt.EntityFrameworkCore.Data.Initial.csproj" />
     <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Data.Main\DragoAnt.EntityFrameworkCore.Data.Main.csproj" />
-    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection.csproj" />
-    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.InMemory.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.InMemory.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.DependencyInjection\DragoAnt.EntityFrameworkCore.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection\DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection.csproj" />
     <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Testing\DragoAnt.EntityFrameworkCore.Testing.csproj" />
   </ItemGroup>
 

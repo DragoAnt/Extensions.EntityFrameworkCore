@@ -8,7 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased\DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.csproj" />
     <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.EntityConventions\DragoAnt.EntityFrameworkCore.EntityConventions.csproj" />
-    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection\DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.DependencyInjection\DragoAnt.EntityFrameworkCore.DependencyInjection.csproj" />
     <ProjectReference Include="..\DragoAnt.EntityFrameworkCore.StaticMigrations\DragoAnt.EntityFrameworkCore.StaticMigrations.csproj" />
   </ItemGroup>
 

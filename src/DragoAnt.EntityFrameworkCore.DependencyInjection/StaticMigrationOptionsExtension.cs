@@ -1,4 +1,7 @@
 using System.Text;
+using DragoAnt.EntityFrameworkCore.StaticMigrations;
+using DragoAnt.EntityFrameworkCore.StaticMigrations.StaticMigrations;
+using DragoAnt.StaticMigrations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -6,11 +9,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using DragoAnt.EntityFrameworkCore.StaticMigrations;
-using DragoAnt.EntityFrameworkCore.StaticMigrations.StaticMigrations;
-using DragoAnt.StaticMigrations;
 
-namespace DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.DependencyInjection;
 
 internal sealed class StaticMigrationOptionsExtension : IDbContextOptionsExtension
 {

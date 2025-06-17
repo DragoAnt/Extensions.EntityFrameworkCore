@@ -1,11 +1,11 @@
 using System.Reflection;
-using Microsoft.EntityFrameworkCore;
 using DragoAnt.EntityFrameworkCore.StaticMigrations;
 using DragoAnt.Shared.Resources;
 using DragoAnt.StaticMigrations;
 using DragoAnt.StaticMigrations.MigrationConditions;
+using Microsoft.EntityFrameworkCore;
 
-namespace DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.DependencyInjection;
 
 /// <summary>
 ///     Builder for configure static migrations

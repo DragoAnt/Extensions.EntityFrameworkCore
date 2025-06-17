@@ -1,19 +1,24 @@
 using System.Data.Common;
 using DragoAnt.EntityConventions.Contacts;
-using DragoAnt.EntityConventions.Contacts.TriggerBased;
+using DragoAnt.EntityConventions.TriggerBased.Contacts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.Data.Initial;
+using DragoAnt.EntityFrameworkCore.Data.Initial.DictEntities;
 using DragoAnt.EntityFrameworkCore.Data.Initial.Migrations.Static;
 using DragoAnt.EntityFrameworkCore.Data.Main;
 using DragoAnt.EntityFrameworkCore.Data.Main.EF6Initial;
 using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalInitial;
 using DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Static;
+using DragoAnt.EntityFrameworkCore.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer;
 using DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.StaticMigrations.Enums;
 using DragoAnt.EntityFrameworkCore.Tests;
@@ -103,7 +108,7 @@ public class MigrationsTest : TestBase
         await EnsureCreated(_dbContextInitial);
 
         var actual = await _dbContextInitial.Set<CurrencyV1>().ToListAsync();
-        var expected = Data.Initial.StaticMigrations.DictEntities.CurrencyDeclaration.GetActual();
+        var expected = CurrencyDeclaration.GetActual();
         actual.Should().BeEquivalentTo(expected);
     }
 
@@ -182,7 +187,7 @@ public class MigrationsTest : TestBase
 
 
         var actual = await _dbContextInitial.Set<CurrencyV1>().ToListAsync();
-        var expected = Data.Initial.StaticMigrations.DictEntities.CurrencyDeclaration.GetActual();
+        var expected = CurrencyDeclaration.GetActual();
         actual.Should().BeEquivalentTo(expected);
     }
 

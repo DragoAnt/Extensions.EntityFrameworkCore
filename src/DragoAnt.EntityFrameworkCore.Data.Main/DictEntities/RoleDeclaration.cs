@@ -1,4 +1,4 @@
-﻿namespace DragoAnt.EntityFrameworkCore.Data.Main.StaticMigrations.DictEntities;
+﻿namespace DragoAnt.EntityFrameworkCore.Data.Main.DictEntities;
 
 public static class RoleDeclaration
 {

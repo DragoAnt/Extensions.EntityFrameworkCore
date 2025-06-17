@@ -1,9 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.DictEntities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute;
-using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.StaticMigrations.DictEntities;
 
-namespace DragoAnt.EntityFrameworkCore.Data.Main.Configurations;
+namespace DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.Configurations;
 
 public class RoleMap: IEntityTypeConfiguration<Role>
 {

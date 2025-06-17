@@ -1,5 +1,5 @@
 ﻿using DragoAnt.EntityConventions.Contacts;
-using DragoAnt.EntityConventions.Contacts.TriggerBased;
+using DragoAnt.EntityConventions.TriggerBased.Contacts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.Data.Main;
@@ -11,6 +11,10 @@ using DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.Migrations.Static;
+using DragoAnt.EntityFrameworkCore.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection;
 using Main = DragoAnt.EntityFrameworkCore.Data.Main;
 using MainWithoutAttribute = DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute;
 

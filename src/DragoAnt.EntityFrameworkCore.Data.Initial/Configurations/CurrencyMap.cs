@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DragoAnt.EntityFrameworkCore.Data.Initial.DictEntities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using DragoAnt.EntityFrameworkCore.Data.Initial.StaticMigrations.DictEntities;
 
 namespace DragoAnt.EntityFrameworkCore.Data.Initial.Configurations;
 

@@ -1,8 +1,8 @@
+using DragoAnt.EntityFrameworkCore.StaticMigrations.Enums;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.StaticMigrations.Enums;
 
-namespace DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.DependencyInjection;
 
 public static class StaticMigrationBuilderExtensions
 {

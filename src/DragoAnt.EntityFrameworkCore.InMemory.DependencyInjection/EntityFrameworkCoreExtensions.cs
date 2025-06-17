@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
-using CommonExtensions = DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection.EntityFrameworkCoreExtensions;
+﻿using DragoAnt.EntityFrameworkCore.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using CommonExtensions = DragoAnt.EntityFrameworkCore.DependencyInjection.EntityFrameworkCoreExtensions;
 
-namespace DragoAnt.EntityFrameworkCore.InMemory.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection;
 
 /// <summary>
 ///     Dependency injection extensions for register Entity Framework core static migrations

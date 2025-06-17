@@ -3,7 +3,7 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using DragoAnt.EntityConventions.Contacts;
-using DragoAnt.EntityConventions.Contacts.TriggerBased;
+using DragoAnt.EntityConventions.TriggerBased.Contacts;
 using DragoAnt.EntityFrameworkCore.Relational;
 
 namespace DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased;

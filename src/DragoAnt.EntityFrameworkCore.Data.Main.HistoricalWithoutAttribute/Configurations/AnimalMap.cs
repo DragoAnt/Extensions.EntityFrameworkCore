@@ -1,9 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DragoAnt.EntityFrameworkCore.EntityConventions;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute;
-using DragoAnt.EntityFrameworkCore.EntityConventions;
 
-namespace DragoAnt.EntityFrameworkCore.Data.Main.Configurations;
+namespace DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.Configurations;
 
 public class AnimalMap: IEntityTypeConfiguration<Animal>
 {

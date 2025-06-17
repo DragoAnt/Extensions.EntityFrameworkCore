@@ -1,4 +1,4 @@
-using DragoAnt.EntityFrameworkCore.Extensions.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.StaticMigrations;
 
 namespace DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer;

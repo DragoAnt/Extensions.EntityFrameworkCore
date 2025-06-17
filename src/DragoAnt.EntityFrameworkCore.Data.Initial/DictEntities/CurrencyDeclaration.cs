@@ -1,4 +1,4 @@
-namespace DragoAnt.EntityFrameworkCore.Data.Initial.StaticMigrations.DictEntities;
+namespace DragoAnt.EntityFrameworkCore.Data.Initial.DictEntities;
 
 public static class CurrencyDeclaration
 {

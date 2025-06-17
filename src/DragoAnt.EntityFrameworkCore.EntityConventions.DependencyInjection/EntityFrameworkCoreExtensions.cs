@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace DragoAnt.EntityFrameworkCore.EntityConventions.Extensions.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.EntityConventions.DependencyInjection;
 
 /// <summary>
 ///     Dependency injection extensions for register Entity Framework core entity conventions
