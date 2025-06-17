@@ -10,7 +10,6 @@ using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.Migratio
 using DragoAnt.EntityFrameworkCore.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection;
 using Main = DragoAnt.EntityFrameworkCore.Data.Main;
 using MainWithoutAttribute = DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute;
 

@@ -15,7 +15,6 @@ using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjecti
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer;
 using DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection;
-using DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.StaticMigrations.Enums;
 using DragoAnt.EntityFrameworkCore.Tests;
 

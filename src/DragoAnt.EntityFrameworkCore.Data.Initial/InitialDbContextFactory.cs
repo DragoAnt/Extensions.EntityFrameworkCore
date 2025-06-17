@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using DragoAnt.EntityFrameworkCore.Data.Initial.Migrations.Static;
-using DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection;
+using DragoAnt.EntityFrameworkCore.DependencyInjection;
 
 namespace DragoAnt.EntityFrameworkCore.Data.Initial;
 

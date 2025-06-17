@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.Migrations.Static;
+using DragoAnt.EntityFrameworkCore.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased;
 using DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer;
-using DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection;
 
 
 namespace DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute;

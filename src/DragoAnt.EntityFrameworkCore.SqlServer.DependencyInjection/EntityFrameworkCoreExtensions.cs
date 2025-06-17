@@ -1,13 +1,12 @@
-﻿using DragoAnt.EntityFrameworkCore.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using CommonExtensions = DragoAnt.EntityFrameworkCore.DependencyInjection.EntityFrameworkCoreExtensions;
 
-namespace DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection;
+namespace DragoAnt.EntityFrameworkCore.DependencyInjection;
 
 /// <summary>
 ///     Dependency injection extensions for register Entity Framework core static migrations
 /// </summary>
-public static class EntityFrameworkCoreExtensions
+public static class SqlServerEntityFrameworkCoreExtensions
 {
     private static readonly SqlServerMigrations Configurator = new();
 
