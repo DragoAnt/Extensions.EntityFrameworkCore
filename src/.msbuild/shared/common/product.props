@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <AssemblyTitle Condition="'$(AssemblyTitle)'==''">$(MSBuildProjectName)</AssemblyTitle>
+
+    <!-- Year for usage in copyright and etc. -->
+    <Year>$([System.DateTime]::Now.Year)</Year>
+    <!-- Legal trademarks, avoid use " -->
+    <LegalTrademarks>$(ManufacturerName)</LegalTrademarks>
+    <!-- These properties elso used for assembly attributes for Sdk style projects. See https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#properties-per-attribute -->
+    <Company>$(FullManufacturerName)</Company>
+    <!-- Copyright, avoid use " -->
+    <Copyright>© $(Year) $(FullManufacturerName) ALL RIGHTS RESERVED.</Copyright>
+
+    <Authors>$(ManufacturerName)</Authors>
+
+  </PropertyGroup>
+</Project>

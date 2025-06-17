@@ -1,0 +1,47 @@
+<Project>
+
+  <PropertyGroup>
+    <Nullable Condition="'$(Nullable)'==''">enable</Nullable>
+    <ImplicitUsings Condition="'$(ImplicitUsings)'==''">enable</ImplicitUsings>
+    <LangVersion Condition="'$(LangVersion)'==''">latest</LangVersion>
+    <EnforceCodeStyleInBuild Condition="'$(EnforceCodeStyleInBuild)'==''">True</EnforceCodeStyleInBuild>
+
+    <GenerateDocumentationFile Condition="'$(GenerateDocumentationFile)'=='' AND '$(IsPackable)'=='True'">True</GenerateDocumentationFile>
+
+    <GeneratePackageOnBuild Condition="'$(GeneratePackageOnBuild)'==''">False</GeneratePackageOnBuild>
+    <SecretsTemplatesDir Condition="'$(SecretsTemplatesDir)'==''">$(MSBuildThisFileDirectory)..\..\.msbuild.templates\</SecretsTemplatesDir>
+  </PropertyGroup>
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)..\init.company.specific.props')"
+          Project="$(MSBuildThisFileDirectory)..\init.company.specific.props" />
+
+  <Import Project="$(MSBuildThisFileDirectory)common\init.common.props" />
+
+  <!--  After init common properties-->
+  <PropertyGroup>
+    <SlnSecretsCleanUp Condition="'$(SlnSecretsCleanUp)'=='' AND '$(IsDevEnv)'!='True'">True</SlnSecretsCleanUp>
+    <SecretsCleanUp Condition="'$(SecretsCleanUp)'=='' AND '$(IsDevEnv)'!='True'">True</SecretsCleanUp>
+  </PropertyGroup>
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)..\..\Directory.Version.props')"
+          Project="$(MSBuildThisFileDirectory)..\..\Directory.Version.props" />
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)version.props')"
+          Project="$(MSBuildThisFileDirectory)version.props" />
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)tests\tests.project.props')"
+          Project="$(MSBuildThisFileDirectory)tests\tests.project.props" />
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)local.directory.secrets.props')"
+          Project="$(MSBuildThisFileDirectory)local.directory.secrets.props" />
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)local.cs.files.props')"
+          Project="$(MSBuildThisFileDirectory)local.cs.files.props" />
+
+  <!--  Final imports-->
+
+  <!--  Always last-->
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)checks\init.checks.props')"
+          Project="$(MSBuildThisFileDirectory)checks\init.checks.props" />
+
+</Project>

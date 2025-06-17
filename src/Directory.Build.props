@@ -1,36 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <Project>
-
   <PropertyGroup>
-    <RepositoryUrl>https://github.com/DragoAnt/Extensions.EntityFrameworkCore</RepositoryUrl>
-
+    <TargetFrameworkStrategy>TargetFrameworks</TargetFrameworkStrategy>
     <TargetFrameworks>net7.0;net8.0;net9.0</TargetFrameworks>
-    <IsPackable>true</IsPackable>
-
-    <LangVersion>latest</LangVersion>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1591;EF1001;xUnit1051</NoWarn>
 
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <!-- TODO:   Remove after remove support of net7-->
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+    <NoWarn>$(NoWarn);NETSDK1138</NoWarn>
   </PropertyGroup>
 
-  <Import Condition="'$(IsTfmConstantsImported)'!='True'" Project="$(MSBuildThisFileDirectory).msbuild\tfm.constants.props" />
-
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\local.directory.secrets.props" />
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\tests.project.props" />
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\product.props" />
-  <Import Project="$(MSBuildThisFileDirectory)version.props" />
+  <Import Project="$(MSBuildThisFileDirectory).msbuild\shared\init.props" />
 
   <PropertyGroup Condition="'$(IsTestsProject)'=='True'">
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(IsTestsProject)'!='True'">
-    <TestsDir>$(MSBuildThisFileDirectory)</TestsDir>
-    <InternalsVisibleToAllTestsProjects>true</InternalsVisibleToAllTestsProjects>
   </PropertyGroup>
 
 </Project>

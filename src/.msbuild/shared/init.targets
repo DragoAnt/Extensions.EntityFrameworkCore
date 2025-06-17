@@ -1,0 +1,55 @@
+<Project>
+
+  <Import Project="$(MSBuildThisFileDirectory)common\init.common.targets" />
+
+  <Import Project="$(MSBuildThisFileDirectory)tests\tests.project.targets" />
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)project.global.usings.targets')"
+          Project="$(MSBuildThisFileDirectory)project.global.usings.targets" />
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)..\..\Directory.GlobalUsings.targets')"
+          Project="$(MSBuildThisFileDirectory)..\..\Directory.GlobalUsings.targets" />
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)local.cs.files.targets')"
+          Project="$(MSBuildThisFileDirectory)local.cs.files.targets" />
+
+  <!--  We can init secrets in targets only due UserSecretsId set in csproj after all props-->
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)local.secrets.props')"
+          Project="$(MSBuildThisFileDirectory)local.secrets.props" />
+
+  <Import Condition="'$(SlnSecretsCleanUp)'=='True'"
+          Project="$(MSBuildThisFileDirectory)local.directory.secrets.cleanup.targets" />
+
+  <Import Condition="'$(SecretsCleanUp)'=='True'"
+          Project="$(MSBuildThisFileDirectory)local.secrets.cleanup.targets" />
+
+  <!--  Local dev only-->
+  <ImportGroup Condition="'$(IsDevEnv)'=='True'">
+
+    <Import Condition="Exists('$(MSBuildThisFileDirectory)local.secrets.targets')"
+            Project="$(MSBuildThisFileDirectory)local.secrets.targets" />
+
+    <Import Condition="Exists('$(MSBuildThisFileDirectory)local.directory.secrets.targets')"
+            Project="$(MSBuildThisFileDirectory)local.directory.secrets.targets" />
+  </ImportGroup>
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)..\..\Directory.Packages.Metadata.targets')"
+          Project="$(MSBuildThisFileDirectory)..\..\Directory.Packages.Metadata.targets" />
+
+  <!--  Final imports-->
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)..\init.company.specific.targets')"
+          Project="$(MSBuildThisFileDirectory)..\init.company.specific.targets" />
+
+  <!--  Always last-->
+  <Import Project="$(MSBuildThisFileDirectory)common\init.common.final.targets" />
+  
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)..\..\Directory.PackageAsProj.targets')"
+          Project="$(MSBuildThisFileDirectory)..\..\Directory.PackageAsProj.targets" />
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)packageAsProj.routine.targets')"
+          Project="$(MSBuildThisFileDirectory)packageAsProj.routine.targets" />
+
+  <Import Condition="Exists('$(MSBuildThisFileDirectory)checks\init.checks.targets')"
+          Project="$(MSBuildThisFileDirectory)checks\init.checks.targets" />
+
+</Project>

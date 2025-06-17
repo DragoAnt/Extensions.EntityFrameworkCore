@@ -1,0 +1,7 @@
+<Project>
+
+  <Import Project="$(MSBuildThisFileDirectory)secrets.project.targets" />
+  <Import Condition="'$(IsCodeAnalizerLib)'=='True'" Project="$(MSBuildThisFileDirectory)code.analyzer.targets" />
+  <Import Condition="'$(IsPackable)'=='True'" Project="$(MSBuildThisFileDirectory)package.targets" />
+
+</Project>

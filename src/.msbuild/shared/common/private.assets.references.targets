@@ -1,0 +1,16 @@
+<Project>
+
+  <!--  Sets to all  ProjectReference PrivateAssets=All if ProjectReferenceAsPrivateAssets=true-->
+  <!--  Sets to all  PackageReference PrivateAssets=All if PackageReferenceAsPrivateAssets=true-->
+
+  <ItemGroup Condition="'$(ProjectReferenceAsPrivateAssets)'=='True'">
+    <!-- Prevents project references from being transitively included in projects that reference this one -->
+    <ProjectReference Update="@(ProjectReference)" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(PackageReferenceAsPrivateAssets)'=='True'">
+    <!-- Prevents package references from being transitively included in projects that reference this one -->
+    <PackageReference Update="@(PackageReference)" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>

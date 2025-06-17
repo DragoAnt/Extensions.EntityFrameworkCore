@@ -1,0 +1,22 @@
+<Project>
+  <!--    Gets branch from .git directory -->
+  <PropertyGroup Condition="'$(Branch)'==''">
+    <GitRoot>$(MSBuildProjectDirectory)</GitRoot>
+    <GitRoot Condition="!Exists('$(GitRoot)\.git')">$([System.IO.Path]::GetDirectoryName($(GitRoot)))</GitRoot>
+    <GitRoot Condition="!Exists('$(GitRoot)\.git')">$([System.IO.Path]::GetDirectoryName($(GitRoot)))</GitRoot>
+    <GitRoot Condition="!Exists('$(GitRoot)\.git')">$([System.IO.Path]::GetDirectoryName($(GitRoot)))</GitRoot>
+    <GitRoot Condition="!Exists('$(GitRoot)\.git')">$([System.IO.Path]::GetDirectoryName($(GitRoot)))</GitRoot>
+    <GitRoot Condition="!Exists('$(GitRoot)\.git')">$([System.IO.Path]::GetDirectoryName($(GitRoot)))</GitRoot>
+    <GitRoot Condition="!Exists('$(GitRoot)\.git')">$([System.IO.Path]::GetDirectoryName($(GitRoot)))</GitRoot>
+    <GitRoot Condition="!Exists('$(GitRoot)\.git')">$([System.IO.Path]::GetDirectoryName($(GitRoot)))</GitRoot>
+    <Branch Condition="Exists('$(GitRoot)\.git\HEAD')">$([System.IO.File]::ReadAllText('$(GitRoot)\.git\HEAD').Trim().Replace('ref: refs/heads/', ''))</Branch>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Branch Condition="'$(Branch)'==''">unknown-branch</Branch>
+    <IsStableBranchRegex Condition="'$(IsStableBranchRegex)'==''">^(master|release).*$</IsStableBranchRegex>
+    <IsStableBranch>false</IsStableBranch>
+    <IsStableBranch Condition="$([System.Text.RegularExpressions.Regex]::IsMatch($(Branch), $(IsStableBranchRegex), RegexOptions.IgnoreCase))">true</IsStableBranch>
+  </PropertyGroup>
+
+</Project>

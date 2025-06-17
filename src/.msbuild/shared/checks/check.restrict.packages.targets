@@ -1,0 +1,37 @@
+<Project InitialTargets="RestrictPackageReferenceChecks">
+  <!--    Restrict packages usage -->
+
+  <!--  Example or restrictions-->
+  <!--
+    <ItemGroup>
+      <RestrictPackageReference Include="Moq" Type="Error" Message="Using Moq library is prohibited. More details: https://github.com/devlooped/moq/issues/1396" />
+
+      <RestrictPackageReference Include="Google.Protobuf" Type="Warning" Message="Use protobuf-net.Grpc.ClientFactory instead." />
+    </ItemGroup>
+  -->
+
+  <Target Name="RestrictPackageReferenceChecks" BeforeTargets="Restore;Build;CoreCompile">
+    <ItemGroup>
+      <!--         Trick from here https://philcupp.wordpress.com/2009/10/12/msbuild-tricks-i-don%E2%80%99t-want-to-forget/ -->
+      <PackageReferenceNotAllowed Include="@(RestrictPackageReference)"
+                                  Condition="'@(RestrictPackageReference)'!='' And '@(PackageReference)'!='' and '%(Identity)'!=''" />
+      <PackageReferenceNotAllowed Update="@(PackageReference)" Condition="'%(PackageReference.SkipRestriction)'=='True'"
+                                  SkipRestriction="True" />
+
+    </ItemGroup>
+
+    <Error Condition="'%(PackageReferenceNotAllowed.Identity)'!='' And '%(PackageReferenceNotAllowed.Type)'=='Error' And '%(PackageReferenceNotAllowed.SkipRestriction)'!='True'"
+           Text="Using of package '%(PackageReferenceNotAllowed.Identity)' is prohibited. %(PackageReferenceNotAllowed.Message). You can skip this restriction with adding SkipRestriction=&quot;True&quot; to PackageReference."
+           File="$(MSBuildProjectFullPath)" />
+
+    <!--    Error with skip restriction-->
+    <Warning Condition="'%(PackageReferenceNotAllowed.Identity)'!='' And '%(PackageReferenceNotAllowed.Type)'=='Error' And '%(PackageReferenceNotAllowed.SkipRestriction)'=='True'"
+             Text="Using of package '%(PackageReferenceNotAllowed.Identity)' is prohibited. %(PackageReferenceNotAllowed.Message)"
+             File="$(MSBuildProjectFullPath)" />
+
+    <Warning Condition="'%(PackageReferenceNotAllowed.Identity)'!='' And '%(PackageReferenceNotAllowed.Type)'=='Warning'"
+             Text="Using of package '%(PackageReferenceNotAllowed.Identity)' is restricted. %(PackageReferenceNotAllowed.Message)"
+             File="$(MSBuildProjectFullPath)" />
+  </Target>
+
+</Project>

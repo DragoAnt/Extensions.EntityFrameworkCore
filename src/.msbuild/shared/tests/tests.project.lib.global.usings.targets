@@ -1,0 +1,31 @@
+<Project>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Allowed="True" />
+    <PackageReference Include="NSubstitute" Allowed="True" />
+    <PackageReference Include="NSubstitute.Analyzers.CSharp" Allowed="True">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IsTestsProject)'=='True'">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Allowed="True" />
+    <PackageReference Include="xunit.v3" Allowed="True" />
+    <PackageReference Include="xunit.runner.visualstudio" Allowed="True" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IsTestsLibProject)'=='True'">
+    <PackageReference Include="xunit.v3.assert" Allowed="True" />
+    <PackageReference Include="xunit.v3.extensibility.core" Allowed="True" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="FluentAssertions" />
+    <Using Include="NSubstitute" />
+    <Using Include="NSubstitute.ExceptionExtensions" />
+    <Using Include="System.Diagnostics.CodeAnalysis" />
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+</Project>

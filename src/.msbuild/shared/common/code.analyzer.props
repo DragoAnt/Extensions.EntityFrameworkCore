@@ -1,0 +1,30 @@
+<Project>
+
+  <PropertyGroup>
+    <IsCodeAnalizerLib>True</IsCodeAnalizerLib>
+    <DisableSharedGlobalUsings>True</DisableSharedGlobalUsings>
+    <SkipCheck_TargetFrameworkRestriction>True</SkipCheck_TargetFrameworkRestriction>
+
+    <Description Condition="'$(Description)'==''">Code analyzers description</Description>
+
+    <TargetFrameworks />
+    <TargetFramework Condition="'$(TargetFramework)'==''">netstandard2.0</TargetFramework>
+
+    <IsPackable>True</IsPackable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <EnforceExtendedAnalyzerRules>True</EnforceExtendedAnalyzerRules>
+    <PackageTags>analyzer;roslyn;code-analysis</PackageTags>
+    <!-- Analyzer-specific properties -->
+    <IncludeBuildOutput>False</IncludeBuildOutput>
+    <IncludeSymbols>False</IncludeSymbols>
+    <DevelopmentDependency>True</DevelopmentDependency>
+    <IsRoslynComponent>True</IsRoslynComponent>
+    <NoPackageAnalysis>True</NoPackageAnalysis>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Allowed="True" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Allowed="True" />
+  </ItemGroup>
+
+</Project>

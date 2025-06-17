@@ -1,0 +1,66 @@
+<Project InitialTargets="SharedPropertiesProjectChecks">
+  <!--  Usage: Show errors csproj contains shared properties (eg. Targetframework, ImplictUsings) as declared in shared props files (eg. Diectory.Build.props)-->
+
+  <!--  Common checks-->
+  <Target Name="SharedPropertiesProjectChecks" BeforeTargets="Restore;CoreCompile">
+
+    <!--  Rules for using TargetFramework and TargetFrameworks in csproj
+1. Default - doesn't exists
+2. TargetFrameworks extended
+3. TargetFrameworks cleaned and set TargetFramework
+Remarks:  Only one property node allowed
+-->
+    <XmlPeek XmlInputPath="$(MSBuildProjectFullPath)" Query="Project/PropertyGroup/TargetFramework/text()">
+      <Output TaskParameter="Result" ItemName="TargetFrameworkCheckXmlResult" />
+    </XmlPeek>
+    <XmlPeek XmlInputPath="$(MSBuildProjectFullPath)" Query="Project/PropertyGroup/TargetFrameworks/text()">
+      <Output TaskParameter="Result" ItemName="TargetFrameworksCheckXmlResult" />
+    </XmlPeek>
+    <XmlPeek XmlInputPath="$(MSBuildProjectFullPath)" Query="Project/PropertyGroup/TargetFramework">
+      <Output TaskParameter="Result" ItemName="TargetFrameworkNodeCheckXmlResult" />
+    </XmlPeek>
+    <XmlPeek XmlInputPath="$(MSBuildProjectFullPath)" Query="Project/PropertyGroup/TargetFrameworks">
+      <Output TaskParameter="Result" ItemName="TargetFrameworksNodeCheckXmlResult" />
+    </XmlPeek>
+    <PropertyGroup>
+      <TargetFrameworkCheckCountXmlResult>@(TargetFrameworkNodeCheckXmlResult->Count())</TargetFrameworkCheckCountXmlResult>
+      <TargetFrameworksCheckCountXmlResult>@(TargetFrameworksNodeCheckXmlResult->Count())</TargetFrameworksCheckCountXmlResult>
+      <TargetFrameworksCheckXmlResultProperty>@(TargetFrameworksCheckXmlResult)</TargetFrameworksCheckXmlResultProperty>
+
+    </PropertyGroup>
+
+    <!--    <Message Text="TargetFramework: '@(TargetFrameworkCheckXmlResult)'($(TargetFrameworkCheckCountXmlResult)), TargetFrameworks: '@(TargetFrameworksCheckXmlResult)'($(TargetFrameworksCheckCountXmlResult))" Importance="high" />-->
+    <Error Code="MSBLC0001"
+           Condition="'$(SkipCheck_TargetFrameworkRestriction)'!='True' AND '$(TargetFrameworkStrategy)'=='TargetFrameworks' AND $(TargetFrameworkCheckCountXmlResult) > 0"
+           Text="Usage of PropertyGroup 'TargetFramework' is restricted in project, use PropertyGroup 'TargetFrameworks' instead, only if you need a different 'TargetFrameworks' comparing to 'TargetFrameworks' from 'Directory.Build.props'. PropertyGroup 'TargetFrameworks' with one platform must ends with ';' . You can skip this check with &lt;SkipCheck_TargetFrameworkRestriction&gt;true&lt;/SkipCheck_TargetFrameworkRestriction&gt; or change &lt;TargetFrameworkStrategy&gt;TargetFramework&lt;/TargetFrameworkStrategy&gt;."
+           File="$(MSBuildProjectFullPath)" />
+
+    <Error Code="MSBLC0002"
+           Condition="'$(SkipCheck_TargetFrameworkRestriction)'!='True' AND '$(TargetFrameworkStrategy)'=='TargetFramework' AND $(TargetFrameworksCheckCountXmlResult) > 0"
+           Text="Usage of PropertyGroup 'TargetFrameworks' is restricted in project, use PropertyGroup 'TargetFramework' instead, only if you need a different 'TargetFramework' comparing to 'TargetFramework' from 'Directory.Build.props'. You can skip this check with &lt;SkipCheck_TargetFrameworkRestriction&gt;true&lt;/SkipCheck_TargetFrameworkRestriction&gt; or change &lt;TargetFrameworkStrategy&gt;TargetFrameworks&lt;/TargetFrameworkStrategy&gt;."
+           File="$(MSBuildProjectFullPath)" />
+
+    <Error Code="MSBLC0003"
+           Condition="'$(SkipCheck_TargetFrameworkRestriction)'!='True' AND '$(TargetFrameworkStrategy)'=='TargetFramework' AND '$(TargetFrameworks)'!=''"
+           Text="Usage of PropertyGroup 'TargetFrameworks' is restricted, use PropertyGroup 'TargetFramework' instead, only if you need a different 'TargetFramework' comparing to 'TargetFramework' from 'Directory.Build.props'. You can skip this check with &lt;SkipCheck_TargetFrameworkRestriction&gt;true&lt;/SkipCheck_TargetFrameworkRestriction&gt; or change &lt;TargetFrameworkStrategy&gt;TargetFrameworks&lt;/TargetFrameworkStrategy&gt;."
+           File="$(MSBuildProjectFullPath)" />
+
+    <Error Code="MSBLC0004"
+           Condition="'$(SkipCheck_TargetFrameworkRestriction)'!='True' AND $(TargetFrameworkCheckCountXmlResult) > 0"
+           Text="The PropertyGroup 'TargetFramework' existed in project. If you need customize TargetFramework for the project add &lt;SkipCheck_TargetFrameworkRestriction&gt;true&lt;/SkipCheck_TargetFrameworkRestriction&gt; to the project."
+           File="$(MSBuildProjectFullPath)" />
+
+    <Error Code="MSBLC0005"
+           Condition="'$(SkipCheck_TargetFrameworkRestriction)'!='True' AND $(TargetFrameworksCheckCountXmlResult) > 0"
+           Text="The PropertyGroup 'TargetFrameworks' existed in project. If you need customize TargetFramework for the project add &lt;SkipCheck_TargetFrameworkRestriction&gt;true&lt;/SkipCheck_TargetFrameworkRestriction&gt; to the project."
+           File="$(MSBuildProjectFullPath)" />
+
+    <!--    TreatWarningsAsErrors-->
+    <!--    <Message Text="TreatWarningsAsErrors: '$(TreatWarningsAsErrors)'" Importance="high" />-->
+    <Error Code="MSBLC0020"
+           Condition="'$(SkipCheck_TreatWarningsAsErrors)'!='True' AND '$(TreatWarningsAsErrors)'!='True' AND '$(TreatWarningsAsErrors)'!='true'"
+           Text="Expected value for PropertyGroup 'TreatWarningsAsErrors' must be 'true'. Actual is '$(TreatWarningsAsErrors)'. You can skip this check if it neccesary by set SkipCheck_TreatWarningsAsErrors to True"
+           File="$(MSBuildProjectFullPath)" />
+
+  </Target>
+</Project>

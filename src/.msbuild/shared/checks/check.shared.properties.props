@@ -1,0 +1,11 @@
+<Project>
+  <!--  Usage: Show errors csproj contains shared properties (eg. Targetframework, ImplictUsings) as declared in shared props files (eg. Diectory.Build.props)-->
+
+  <PropertyGroup>
+    <TreatWarningsAsErrors_Shared>$(TreatWarningsAsErrors)</TreatWarningsAsErrors_Shared>
+
+    <!--    Can be TargetFramework or TargetFrameworks-->
+    <TargetFrameworkStrategy Condition="'$(TargetFrameworkStrategy)'==''">TargetFramework</TargetFrameworkStrategy>
+  </PropertyGroup>
+
+</Project>

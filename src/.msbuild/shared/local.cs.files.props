@@ -1,0 +1,7 @@
+<Project>
+
+  <PropertyGroup>
+    <LocalCompileTemplateDir Condition="'$(LocalCompileTemplateDir)'==''">$(SecretsTemplatesDir)LocalCompile/</LocalCompileTemplateDir>
+  </PropertyGroup>
+
+</Project>

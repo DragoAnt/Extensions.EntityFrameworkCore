@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+
+  <!--  Exclude tests projects from code coverage by default-->
+  <PropertyGroup Condition="'$(IsTestsProject)'=='True' And '$(ExcludeFromCodeCoverage)'==''">
+    <ExcludeFromCodeCoverage>True</ExcludeFromCodeCoverage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Allowed="True">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

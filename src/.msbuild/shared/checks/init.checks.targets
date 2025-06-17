@@ -1,0 +1,11 @@
+<Project>
+
+  <Import Project="$(MSBuildThisFileDirectory)check.shared.properties.targets" />
+
+  <Import Project="$(MSBuildThisFileDirectory)check.prerelease.packages.targets" />
+
+  <Import Project="$(MSBuildThisFileDirectory)check.restrict.reference.targets" />
+
+  <Import Project="$(MSBuildThisFileDirectory)check.restrict.packages.targets" />
+
+</Project>

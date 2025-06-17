@@ -1,0 +1,19 @@
+<Project InitialTargets="CreateXUnitRunnerJson">
+
+  <!-- Target to create xunit.runner.json file -->
+  <Target Condition="!Exists('xunit.runner.json')" Name="CreateXUnitRunnerJson">
+    <PropertyGroup>
+      <!--      @formatter:off-->
+      <XunitRunnerJson>
+{
+    "$schema": "https://xunit.net/schema/current/xunit.runner.schema.json"
+}
+      </XunitRunnerJson>
+      <!--      @formatter:on-->
+    </PropertyGroup>
+
+    <!-- Write an empty JSON object to the file if it doesn't exist -->
+    <WriteLinesToFile File="xunit.runner.json" Overwrite="true" Lines="$(XunitRunnerJson)" />
+  </Target>
+
+</Project>

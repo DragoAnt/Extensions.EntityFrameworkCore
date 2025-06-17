@@ -47,7 +47,7 @@ public abstract class FlowchartGraphBuilder<TOptions>
         int relationNodesCount = 0;
 
         void AddRelation(string leftItemId, string rightItemId, string? caption = null, string? tooltip = null,
-            FlowchartRelationLineEnding leftItemEnding = None,
+            FlowchartRelationLineEnding leftItemEnding = FlowchartRelationLineEnding.None,
             FlowchartRelationLineStyle lineStyle = FlowchartRelationLineStyle.Line, int lineLength = 0,
             FlowchartRelationLineEnding rightItemEnding = Arrow)
         {
@@ -75,9 +75,9 @@ public abstract class FlowchartGraphBuilder<TOptions>
                 }
 
                 graph.AddRelation(leftItemId, relationItemId, null, leftItemEnding,
-                    lineStyle, lineLength / 2, None);
+                    lineStyle, lineLength / 2, FlowchartRelationLineEnding.None);
 
-                graph.AddRelation(relationItemId, rightItemId, null, None,
+                graph.AddRelation(relationItemId, rightItemId, null, FlowchartRelationLineEnding.None,
                     lineStyle, lineLength / 2, rightItemEnding);
             }
             else
@@ -245,7 +245,7 @@ public abstract class FlowchartGraphBuilder<TOptions>
                 var caption = propertyRow.Get(Options.Property.RelationCaption);
                 var toolTip = propertyRow.GetValueOrDefault(Options.Property.RelationTooltip);
                 AddRelation(leftItemId, rightItemId, caption, toolTip,
-                    leftItemEnding: propertyTargetId != null ? Arrow : None);
+                    leftItemEnding: propertyTargetId != null ? Arrow : FlowchartRelationLineEnding.None);
             }
         }
         #endregion

@@ -1,0 +1,60 @@
+<Project>
+  <!--  Usage: Read metadata of the project-->
+
+  <!-- NOTE: More info https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-net-builds?view=vs-2022-->
+
+  <!--  Usage:
+
+   dotnet msbuild -t:ReadDotnetProjMetadata /p:CustomAfterMicrosoftCSharpTargets="(path to target file)/readMetadata.targets" /p:ProjMetadataOutDir="(output dir)"
+
+    -->
+  <PropertyGroup>
+    <ProjMetadataOutDir Condition="'$(ProjMetadataOutDir)'==''">$(OutDir)</ProjMetadataOutDir>
+    <ProjMetadataOutDir>$([System.IO.Path]::GetFullPath('$(ProjMetadataOutDir)').TrimEnd('/').Replace('\', '/'))</ProjMetadataOutDir>
+  </PropertyGroup>
+
+  <Target Name="ReadDotnetProjMetadata" AfterTargets="InitializeBuild" BeforeTargets="CoreCompile">
+    <!--    Based on https://stackoverflow.com/questions/42403046/msbuild-itemgroup-intersection/42403721-->
+    <ItemGroup>
+      <PackageReferenceEmpty Include="@(PackageReference)" Condition="'%(PackageReference.Version)' == ''" />
+    </ItemGroup>
+    <CreateItem Include="@(PackageVersion)" Condition="'%(Identity)' != '' AND '@(PackageReferenceEmpty)' != ''">
+      <Output TaskParameter="Include" ItemName="PackagesWithVersion" />
+    </CreateItem>
+
+    <ItemGroup>
+      <PackagesWithVersion Include="@(PackageReference)" Condition="'%(PackageReference.Version)' != ''">
+        <Version>%(PackageReference.Version)</Version>
+      </PackagesWithVersion>
+      <PackagesWithVersion Include="@(PackageReference)" Condition="'%(PackageReference.Version)' == '' AND '%(PackageReference.VersionOverride)' !=''">
+        <Version>%(PackageReference.VersionOverride)</Version>
+        <VersionOverride>true</VersionOverride>
+      </PackagesWithVersion>
+    </ItemGroup>
+
+    <PropertyGroup>
+      <ProjMetadataOutFile>$(ProjMetadataOutDir)/$(MSBuildProjectName).$(TargetFramework).metadata.yml</ProjMetadataOutFile>
+
+      <UseCPM>$(ManagePackageVersionsCentrally)</UseCPM>
+      <UseCPM Condition="'$(UseCPM)'==''">false</UseCPM>
+
+      <Packages>@(PackagesWithVersion->' %(Identity): %(Version)', '%0D%0A')</Packages>
+    </PropertyGroup>
+
+    <MakeDir Directories="$(ProjMetadataOutDir)" Condition="!Exists('$(ProjMetadataOutDir)')" />
+
+    <WriteLinesToFile
+        File="$(ProjMetadataOutFile)"
+        Overwrite="true"
+        Lines="
+project: $(MSBuildProjectName)
+description: $(Description)
+tfm: $(TargetFramework)
+useCPM: $(UseCPM)
+isPackage: $(IsPackable)
+packages:
+$(Packages)
+" />
+
+  </Target>
+</Project>

@@ -1,0 +1,10 @@
+<Project>
+
+  <!--  Prepare CI run variables  -->
+  <PropertyGroup>
+    <IsDevEnv Condition="'$(CI_PIPELINE_ID)'!=''">False</IsDevEnv>
+    <CIPipelineId>$(CI_PIPELINE_ID)</CIPipelineId>
+    <Branch Condition="'$(IsDevEnv)'!='True' AND '$(Branch)'==''">$(CI_COMMIT_REF_SLUG)</Branch>
+  </PropertyGroup>
+
+</Project>

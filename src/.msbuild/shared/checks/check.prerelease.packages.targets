@@ -1,0 +1,37 @@
+<Project>
+  <!--  Usage: Show warnings/errors if SD.* packages are used for build stable branch-->
+  <!--  For switch to errors set PrereleasePackageCheckAsWarning to false -->
+  <!--NOTE:  Can be used with git.routine.props only-->
+
+  <PropertyGroup>
+    <PrereleasePackageCheckAsWarning Condition="'$(PrereleasePackageCheckAsWarning)'==''">true</PrereleasePackageCheckAsWarning>
+  </PropertyGroup>
+
+  <Target Condition="'$(IsStableBranch)'=='true'" Name="CheckPrereleasePackages" BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <PackagesWithVersion Include="@(PackageReference)" Condition="'%(PackageReference.Version)' != ''" />
+      <PackagesWithVersion Include="@(PackageVersion)" Condition="'%(PackageVersion.Version)' != ''" />
+
+      <PrereleaseReferences Include="@(PackagesWithVersion)"
+                            Condition="$([System.String]::Copy('%(Identity)').StartsWith('SD.')) AND $([System.String]::Copy('%(Version)').Contains('-'))" />
+    </ItemGroup>
+    <PropertyGroup>
+      <MessageCode>MSBLC0001</MessageCode>
+      <MessageText>Prerelease packages found in stable branch.
+        Your current branch: $(Branch)
+        But following rc packages are used:
+        @(PrereleaseReferences->' %(Identity) %(Version)', '%0D%0A')
+        Please replace rc packages with stable ones
+      </MessageText>
+    </PropertyGroup>
+
+    <Warning Code="$(MessageCode)"
+             Condition="'@(PrereleaseReferences)'!='' AND '$(PrereleasePackageCheckAsWarning)'=='true'"
+             Text="$(MessageText)" />
+
+    <Error Code="$(MessageCode)"
+           Condition="'@(PrereleaseReferences)'!='' AND '$(PrereleasePackageCheckAsWarning)'!='true'"
+           Text="$(MessageText)" />
+
+  </Target>
+</Project>

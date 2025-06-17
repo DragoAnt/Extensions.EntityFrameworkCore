@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+
+  <!--             GlobalUsings shared accross all projects in sln   -->
+  <!--  More details https://www.daveabrock.com/2021/10/21/csharp-10-global-usings/-->
+
+  <!--  Common projects and packages and global usings for all projects avoid Metrc packages-->
+  <ItemGroup>
+    <Using Include="System.Diagnostics.CodeAnalysis" />
+    <Using Include="System.Runtime.CompilerServices" />
+    <Using Include="System.Runtime.CompilerServices.MethodImplOptions" Static="True" />
+    <Using Include="System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes" Static="True" />
+  </ItemGroup>
+
+</Project>

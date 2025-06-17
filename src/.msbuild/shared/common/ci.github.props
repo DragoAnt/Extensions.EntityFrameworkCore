@@ -1,0 +1,12 @@
+<Project>
+
+  <!--  Prepare CI run variables  -->
+  <PropertyGroup>
+    <IsDevEnv Condition="'$(GITHUB_RUN_ID)'!=''">False</IsDevEnv>
+    <CIPipelineId>$(GITHUB_RUN_ID)</CIPipelineId>
+    <Branch Condition="'$(IsDevEnv)'!='True' AND '$(Branch)'==''">$(GITHUB_REF_NAME)</Branch>
+    <CommitSha>$(GITHUB_SHA)</CommitSha>
+    <BuildNumber>$(GITHUB_RUN_NUMBER)</BuildNumber>
+  </PropertyGroup>
+
+</Project>

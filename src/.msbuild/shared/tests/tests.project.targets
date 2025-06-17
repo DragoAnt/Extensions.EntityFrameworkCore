@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+
+  <!--  Make internal members visible for tests -->
+  <PropertyGroup Condition="'$(IsTestsProject)'!='True'">
+    <InternalsVisibleToAllTestsProjects Condition="'$(InternalsVisibleToAllTestsProjects)'==''">True</InternalsVisibleToAllTestsProjects>
+  </PropertyGroup>
+  <Import Condition="'$(InternalsVisibleToAllTestsProjects)'=='True'" Project="$(MSBuildThisFileDirectory)test.project.internalsVisibleTo.targets" />
+
+  <Import Condition="'$(IsTestsProject)'=='True' Or '$(IsTestsLibProject)'=='True'"
+          Project="$(MSBuildThisFileDirectory)tests.project.lib.global.usings.targets" />
+
+  <ImportGroup Condition="'$(IsTestsProject)'=='True'">
+    <Import Project="$(MSBuildThisFileDirectory)tests.project.code.coverage.targets" />
+    <Import Project="$(MSBuildThisFileDirectory)tests.project.xunit.v3.routine.targets" />
+  </ImportGroup>
+
+</Project>

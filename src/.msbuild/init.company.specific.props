@@ -1,0 +1,42 @@
+<Project>
+
+  <!--  This is a company specific file shared across company's repositories-->
+
+  <PropertyGroup>
+    <ManufacturerName>DragoAnt</ManufacturerName>
+    <FullManufacturerName>DragoAnt</FullManufacturerName>
+
+    <RepositoryUrl>https://github.com/$(GITHUB_REPOSITORY)</RepositoryUrl>
+    <IsGitHubCI>True</IsGitHubCI>
+
+    <IncrementVersionType Condition="'$(IncrementVersionType)'==''">VersionTag</IncrementVersionType>
+    <VersionTag>$(GITHUB_REF_NAME)</VersionTag>
+
+    <IsPackable>true</IsPackable>
+
+    <NoWarn>$(NoWarn);CS1591;EF1001;xUnit1051</NoWarn>
+
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+
+    <LangVersion>latest</LangVersion>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+
+
+
+    <!--  Make internal members visible for tests -->
+    <TestsDir>$(MSBuildThisFileDirectory)..\</TestsDir>
+
+    <SkipCheck_TargetFrameworkRestriction>False</SkipCheck_TargetFrameworkRestriction>
+    <SkipCheck_TreatWarningsAsErrors>False</SkipCheck_TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(GITHUB_RUN_ID)'==''">
+    <RepoFolder>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\').TrimEnd('\').TrimEnd('//'))</RepoFolder>
+    <SlnSecretsId>DragoAnt.$([System.IO.Path]::GetFileName('$(RepoFolder)'))</SlnSecretsId>
+  </PropertyGroup>
+
+</Project>

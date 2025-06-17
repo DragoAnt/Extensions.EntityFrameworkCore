@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+
+  <ItemGroup>
+    <PackageAsProj_ProjectReference Include="@(PackageReference->HasMetadata('ProjPath')-> WithMetadataValue('AsProj','true'))" />
+    <PackageAsProj_PackageReference Include="@(PackageReference->HasMetadata('ProjPath')-> WithMetadataValue('AsProj','false'))" />
+  </ItemGroup>
+
+  <ItemGroup>
+<!--    NOTE: Allowed="True" to avoid restrict checks-->
+    <ProjectReference Include="@(PackageAsProj_ProjectReference->'%(ProjPath)')" Allowed="True" />
+    <PackageReference Remove="@(PackageAsProj_ProjectReference->'%(Identity)')" />
+  </ItemGroup>
+
+  <Target Name="PackageAsProj_ProjectReference_Validation" Condition="'@(PackageAsProj_ProjectReference)'!=''" BeforeTargets="ResolveAssemblyReferences;Build;CoreCompile">
+    <ItemGroup>
+      <ReferenceAssemblyFilename Include="@(Reference->'%(Filename)')" />
+      <PackageAsProj_ProjectReference_Reference Include="@(PackageAsProj_ProjectReference)" Condition="'@(PackageAsProj_ProjectReference->'%(Identity)')'=='@(ReferenceAssemblyFilename->'%(Identity)')' And %(Identity)!=''" />
+    </ItemGroup>
+
+    <PropertyGroup>
+      <AttachSourcesWarningMessage>
+        ================================================================================
+        = ATTENTION: Packages attached as ProjectReference instead of PackageReference =
+        ================================================================================
+        Packages: @(PackageAsProj_ProjectReference)
+      </AttachSourcesWarningMessage>
+    </PropertyGroup>
+    <Message Text="$(AttachSourcesWarningMessage)" Importance="high" />
+
+    <!--            Check that restore was run after add PackageAsProj -->
+    <Error Condition="'@(PackageAsProj_ProjectReference_Reference)'!=''"
+           Text="For using PackageReference as ProjectReference run restore or 'dotnet restore --force' in Terminal"
+           File="$(MSBuildProjectFullPath)" />
+  </Target>
+
+  <Target Name="PackageAsProj_PackageReference_Validation" Condition="'@(PackageAsProj_PackageReference)'!=''" BeforeTargets="ResolveAssemblyReferences;Build;CoreCompile">
+    <ItemGroup>
+      <ReferenceAssemblyFilename Include="@(Reference->'%(Filename)')" />
+      <PackageAsProj_PackageReference_Reference Include="@(PackageAsProj_PackageReference)" Condition="'@(PackageAsProj_PackageReference->'%(Identity)')'=='@(ReferenceAssemblyFilename->'%(Identity)')' And %(Identity)!=''" />
+    </ItemGroup>
+
+    <!--            Check that restore was run after remove PackageAsProj -->
+    <Error Condition="'$(PackageAsProj_SkipChecks)'!='True' AND @(PackageAsProj_PackageReference_Reference->Count())!=@(PackageAsProj_PackageReference->Count()) And @(ReferenceAssemblyFilename->Count())!=0"
+           Text="For restore after using PackageReference as ProjectReference run restore or 'dotnet restore --force' in Terminal. To skip this check use set PackageAsProj_SkipChecks to True."
+           File="$(MSBuildProjectFullPath)" />
+  </Target>
+</Project>

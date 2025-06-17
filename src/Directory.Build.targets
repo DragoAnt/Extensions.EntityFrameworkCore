@@ -1,16 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <Project>
-  <Import Project="$(MSBuildThisFileDirectory)Directory.Packages.Metadata.targets" />
 
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\package.targets" />
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\local.directory.secrets.targets" />
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\local.secrets.targets" />
+  <Import Project="$(MSBuildThisFileDirectory).msbuild\shared\init.targets" />
 
-  <Import Project="$(MSBuildThisFileDirectory)Directory.PackageAsProj.targets" />
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\packageAsProj.routine.targets" />
-
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\tests.project.targets" />
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\test.project.internalsVisibleTo.targets" />
-  
 </Project>

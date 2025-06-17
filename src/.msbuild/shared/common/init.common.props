@@ -1,0 +1,16 @@
+<Project>
+
+  <PropertyGroup>
+    <IsDevEnv Condition="'$(IsDevEnv)'==''">True</IsDevEnv>
+
+    <CodeAnalyzerCommonPropsPath>$(MSBuildThisFileDirectory)code.analyzer.props</CodeAnalyzerCommonPropsPath>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)tfm.constants.props" />
+  <Import Condition="'$(IsGitHubCI)'=='True'" Project="$(MSBuildThisFileDirectory)ci.github.props" />
+  <Import Condition="'$(IsGitlabCI)'=='True'" Project="$(MSBuildThisFileDirectory)ci.gitlab.props" />
+  <Import Project="$(MSBuildThisFileDirectory)git.routine.props" />
+  <Import Project="$(MSBuildThisFileDirectory)secrets.directory.props" />
+  <Import Project="$(MSBuildThisFileDirectory)product.props" />
+
+</Project>

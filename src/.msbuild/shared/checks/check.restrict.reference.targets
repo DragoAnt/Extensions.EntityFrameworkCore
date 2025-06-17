@@ -1,0 +1,42 @@
+<Project InitialTargets="RestrictProjectReferenceChecks;RestrictPackageReferenceChecks">
+  <!--    Checks ProjectReference and PackageReferences in projects are they marked allowed or not -->
+  <!--
+  1. Add RestrictProjectReferences to csproj files. Then all ProjectReference aren't marked with Allowed="True" will show error
+
+  2. Add RestrictPackageReferences to csproj files. Then all PackageReference aren't marked with Allowed="True" will show error
+
+   -->
+  <PropertyGroup>
+    <RestrictReferences Condition="'$(RestrictReferences)'==''">False</RestrictReferences>
+    <RestrictProjectReferences Condition="'$(RestrictProjectReferences)'==''">$(RestrictReferences)</RestrictProjectReferences>
+    <RestrictPackageReferences Condition="'$(RestrictPackageReferences)'==''">$(RestrictReferences)</RestrictPackageReferences>
+  </PropertyGroup>
+
+
+  <Target Name="RestrictProjectReferenceChecks" Condition="'$(RestrictProjectReferences)'=='True'" BeforeTargets="Restore;Build;CoreCompile">
+    <ItemGroup>
+      <!--         Trick from here https://philcupp.wordpress.com/2009/10/12/msbuild-tricks-i-don%E2%80%99t-want-to-forget/ -->
+      <ProjectReferenceNotAllowed Include="@(ProjectReference)"
+                                  Condition=" '%(ProjectReference.Allowed)'!='True' AND '@(ProjectReference)'!='' AND '%(Identity)'!=''" />
+    </ItemGroup>
+
+    <Error Condition="'%(ProjectReferenceNotAllowed.Identity)'!=''"
+           Text="ProjectReference '%(ProjectReferenceNotAllowed.Identity)' not allowed in project file. Remove it if it was added by mistake or mark it with Allowed=&quot;True&quot;."
+           File="$(MSBuildProjectFullPath)" />
+
+  </Target>
+
+  <Target Name="RestrictPackageReferenceChecks" Condition="'$(RestrictPackageReferences)'=='True'" BeforeTargets="Restore;Build;CoreCompile">
+    <ItemGroup>
+      <!--         Trick from here https://philcupp.wordpress.com/2009/10/12/msbuild-tricks-i-don%E2%80%99t-want-to-forget/ -->
+      <PackageReferenceNotAllowed Include="@(PackageReference)"
+                                  Condition=" '%(PackageReference.Allowed)'!='True' AND '@(PackageReference)'!='' AND '%(Identity)'!=''" />
+    </ItemGroup>
+
+    <Error Condition="'%(PackageReferenceNotAllowed.Identity)'!=''"
+           Text="PackageReference '%(PackageReferenceNotAllowed.Identity)' not allowed in project file. Remove it if it was added by mistake or mark it with Allowed=&quot;True&quot;."
+           File="$(MSBuildProjectFullPath)" />
+
+  </Target>
+
+</Project>

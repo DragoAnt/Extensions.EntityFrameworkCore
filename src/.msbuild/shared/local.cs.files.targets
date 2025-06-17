@@ -1,0 +1,27 @@
+<Project InitialTargets="CreateLocalCompileFiles">
+
+  <ItemGroup Condition="'$(UserSecretsId)' != ''">
+    <LocalCompileFile Include="@(LocalCompile->'$(LocalSecretsDir)/%(Filename)%(Extension)')" Template="$(LocalCompileTemplateDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="@(LocalCompileFile)">
+      <Link>%(Filename)</Link>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Target to create LocalSecrets file -->
+  <Target Condition="'@(LocalCompileFile)'!=''" Name="CreateLocalCompileFiles">
+    <!-- Create the directory for LocalSecrets if it doesn't exist -->
+    <MakeDir Directories="$(LocalSecretsDir)" Condition="!Exists('$(LocalSecretsDir)')" />
+
+    <!-- Write an empty template cs file if it doesn't exist(Default body) -->
+    <WriteLinesToFile
+        File="%(LocalCompileFile.Template)"
+        Condition="!Exists('%(LocalCompileFile.Template)')"
+        Lines="namespace $(RootNamespace)%3B" />
+
+    <Copy Condition="!Exists('%(LocalCompileFile.Identity)')" SourceFiles="%(Template)" DestinationFiles="%(Identity)" />
+  </Target>
+
+</Project>

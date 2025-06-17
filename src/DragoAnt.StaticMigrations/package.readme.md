@@ -1,0 +1,3 @@
+# DragoAnt.StaticMigrations
+
+        Static migrations

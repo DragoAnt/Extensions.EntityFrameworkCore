@@ -1,0 +1,32 @@
+<Project InitialTargets="AllTestsInternalsVisibleTo">
+
+  <!--
+    This automatically applies InternalsVisibleToAttribute to all the projects
+    so their internal classes will be visible to all the projects with '.Tests' name ending.
+    -->
+  <PropertyGroup>
+    <!-- Set the project file name ends with ".Tests" -->
+    <TestsProjectNameEndsWith Condition="'$(TestsProjectNameEndsWith)'==''">.Tests</TestsProjectNameEndsWith>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TestsDir)'!=''">
+    <TestsDirEndsWithSlash>$(TestsDir.EndsWith('\'))</TestsDirEndsWithSlash>
+    <TestsDir Condition="'$(TestsDirEndsWithSlash)'=='False'">$(TestsDir)\</TestsDir>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TestsDir)'!='' And Exists('$(TestsDir)')">
+    <InternalVisibleToProj Include="$(TestsDir)**\*$(TestsProjectNameEndsWith).csproj" />
+    <InternalsVisibleTo Include="@(InternalVisibleToProj->'%(Filename)')" />
+  </ItemGroup>
+
+  <Target Name="AllTestsInternalsVisibleTo" BeforeTargets="BeforeCompile">
+    <!--Check that TestsDir set-->
+    <Warning Condition="'$(TestsDir)'==''"
+             Text="The PropertyGroup 'TestsDir' is empty. Fill 'TestsDir' or set 'InternalsVisibleToAllTestsProjects' to False"
+             File="$(MSBuildProjectFullPath)" />
+    <Warning Condition="'$(TestsDir)'!='' And !Exists('$(TestsDir)')"
+             Text="The PropertyGroup 'TestsDir' is '$(TestsDir)'. Fill 'TestsDir' or set 'InternalsVisibleToAllTestsProjects' to False"
+             File="$(MSBuildProjectFullPath)" />
+
+  </Target>
+
+</Project>

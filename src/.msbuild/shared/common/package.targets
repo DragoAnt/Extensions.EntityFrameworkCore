@@ -1,0 +1,43 @@
+<Project InitialTargets="CreatePackageReadme">
+
+  <PropertyGroup>
+    <PackageId Condition="'$(PackageId)'==''">$(MSBuildProjectName)</PackageId>
+    <Description Condition="'$(Description)'==''">$(MSBuildProjectName)</Description>
+    <PackageVersion Condition="'$(PackageVersion)'==''">$(Version)</PackageVersion>
+    <IncludeSymbols Condition="'$(IncludeSymbols)'==''">false</IncludeSymbols>
+
+    <PackageIconPath Condition="'$(PackageIconPath)'==''">$(MSBuildThisFileDirectory)..\package.icon.png</PackageIconPath>
+    <PackageIcon Condition="Exists('$(PackageIconPath)')">icon.png</PackageIcon>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+
+    <RepositoryType Condition="'$(RepositoryType)'==''">git</RepositoryType>
+    <PackageProjectUrl Condition="'$(PackageProjectUrl)'==''">$(RepositoryUrl)</PackageProjectUrl>
+  </PropertyGroup>
+
+  <!--Packages details-->
+  <ItemGroup>
+    <None Condition="Exists('$(PackageIconPath)')" Include="$(PackageIconPath)" Pack="true" PackagePath="\icon.png" Visible="false" />
+    <None Include="package.readme.md" Pack="true" PackagePath="\readme.md" />
+
+    <!--    Include package controlled msbuild props and targets -->
+    <None Include="build\**" PackagePath="build\" Pack="true" />
+    <None Include="buildMultiTargeting\**" PackagePath="buildMultiTargeting\" Pack="true" />
+  </ItemGroup>
+
+  <!-- Target to create xunit.runner.json file -->
+  <Target Condition="!Exists('package.readme.md')" Name="CreatePackageReadme">
+    <PropertyGroup>
+      <!--@formatter:off-->
+      <PackageReadmeBody>
+        # $(MSBuildProjectName)
+
+        $(Description)
+      </PackageReadmeBody>
+      <!--@formatter:on-->
+    </PropertyGroup>
+
+    <!-- Write a default package.readme.md body to the file if it doesn't exist -->
+    <WriteLinesToFile File="package.readme.md" Overwrite="true" Lines="$(PackageReadmeBody)" />
+  </Target>
+
+</Project>

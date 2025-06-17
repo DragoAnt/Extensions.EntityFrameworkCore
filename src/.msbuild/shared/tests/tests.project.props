@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project>
+  <PropertyGroup>
+    <!-- Set the project file name ends with ".Tests" -->
+    <TestsProjectNameEndsWith Condition="'$(TestsProjectNameEndsWith)'==''">.Tests</TestsProjectNameEndsWith>
+    <IsTestsProject Condition="'$(IsTestsProject)'==''">$(MSBuildProjectName.EndsWith($(TestsProjectNameEndsWith)))</IsTestsProject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(IsTestsProject)'=='True'">
+    <IsPackable>False</IsPackable>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <Import Condition="'$(IsTestsProject)'=='True'"
+          Project="$(MSBuildThisFileDirectory)tests.project.xunit.v3.routine.props" />
+
+</Project>
