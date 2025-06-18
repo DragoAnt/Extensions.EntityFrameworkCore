@@ -1,25 +1,131 @@
 <!--Add metadata to PackageReference to use ProjectReference instead of PackageReference-->
 <Project>
   <PropertyGroup>
-    <_AsProj_DragoAnt_Shared>false</_AsProj_DragoAnt_Shared>
-    <_AsProj_DragoAnt_Shared Condition="'$(PackageAsProj_DragoAnt_Shared)'=='true'">true</_AsProj_DragoAnt_Shared>
+    <_AsProj_DragoAnt_EntityFrameworkCore>false</_AsProj_DragoAnt_EntityFrameworkCore>
+    <_AsProj_DragoAnt_EntityFrameworkCore Condition="'$(PackageAsProj_DragoAnt)'=='true' Or '$(PackageAsProj_DragoAnt_EntityFrameworkCore)'=='true'">true</_AsProj_DragoAnt_EntityFrameworkCore>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Update="DragoAnt.Shared"
-                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.Shared\DragoAnt.Shared.csproj"
-                      AsProj="$(_AsProj_DragoAnt_Shared)" />
+    <PackageReference Update="DragoAnt.EntityConventions.Contacts"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityConventions.Contacts\DragoAnt.EntityConventions.Contacts.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
 
-    <PackageReference Update="DragoAnt.Shared.AspNetCore"
-                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.Shared.AspNetCore\DragoAnt.Shared.AspNetCore.csproj"
-                      AsProj="$(_AsProj_DragoAnt_Shared)" />
+    <PackageReference Update="DragoAnt.EntityConventions.TriggerBased.Contacts"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityConventions.TriggerBased.Contacts\DragoAnt.EntityConventions.TriggerBased.Contacts.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
 
-    <PackageReference Update="DragoAnt.Shared.Csv"
-                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.Shared.Csv\DragoAnt.Shared.Csv.csproj"
-                      AsProj="$(_AsProj_DragoAnt_Shared)" />
+    <PackageReference Update="DragoAnt.EntityDefinition.AspNetCore"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityDefinition.AspNetCore\DragoAnt.EntityDefinition.AspNetCore.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
 
-    <PackageReference Update="DragoAnt.Shared.Mermaid"
-                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.Shared.Mermaid\DragoAnt.Shared.Mermaid.csproj"
-                      AsProj="$(_AsProj_DragoAnt_Shared)" />
+    <PackageReference Update="DragoAnt.EntityDefinition.Contracts"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityDefinition.Contracts\DragoAnt.EntityDefinition.Contracts.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityDefinition"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityDefinition\DragoAnt.EntityDefinition.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityDefinition.EntityFrameworkCore"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityDefinition.EntityFrameworkCore\DragoAnt.EntityDefinition.EntityFrameworkCore.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityDefinition.EntityFrameworkCore.Flowchart"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityDefinition.EntityFrameworkCore.Flowchart\DragoAnt.EntityDefinition.EntityFrameworkCore.Flowchart.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityDefinition.EntityFrameworkCore.Relational"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityDefinition.EntityFrameworkCore.Relational\DragoAnt.EntityDefinition.EntityFrameworkCore.Relational.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityDefinition.Flowchart"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityDefinition.Flowchart\DragoAnt.EntityDefinition.Flowchart.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore\DragoAnt.EntityFrameworkCore.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.DependencyInjection"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.DependencyInjection\DragoAnt.EntityFrameworkCore.DependencyInjection.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.EntityConventions"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.EntityConventions\DragoAnt.EntityFrameworkCore.EntityConventions.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.EntityConventions.DependencyInjection"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.EntityConventions.DependencyInjection\DragoAnt.EntityFrameworkCore.EntityConventions.DependencyInjection.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection\DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased\DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer\DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.HistoricalMigrations"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.HistoricalMigrations\DragoAnt.EntityFrameworkCore.HistoricalMigrations.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection\DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection\DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.PostgreSQL"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.PostgreSQL\DragoAnt.EntityFrameworkCore.PostgreSQL.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection\DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.Relational"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.Relational\DragoAnt.EntityFrameworkCore.Relational.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.SqlServer"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.SqlServer\DragoAnt.EntityFrameworkCore.SqlServer.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection\DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.StaticMigrations"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.StaticMigrations\DragoAnt.EntityFrameworkCore.StaticMigrations.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.EntityFrameworkCore.Testing"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityFrameworkCore.Testing\DragoAnt.EntityFrameworkCore.Testing.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+    <PackageReference Update="DragoAnt.StaticMigrations"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.StaticMigrations\DragoAnt.StaticMigrations.csproj"
+                      AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
   </ItemGroup>
+
+  <!--    @formatter:off    -->
+<!--
+
+^\s*(DragoAnt.+)\.csproj
+
+    <PackageReference Update="$1"
+                      ProjPath="\$(MSBuildThisFileDirectory)$1\\$1.csproj"
+                      AsProj="\$(_AsProj_DragoAnt_EntityFrameworkCore)" />
+
+
+-->
+  <!--    @formatter:on-->
 
 </Project>
