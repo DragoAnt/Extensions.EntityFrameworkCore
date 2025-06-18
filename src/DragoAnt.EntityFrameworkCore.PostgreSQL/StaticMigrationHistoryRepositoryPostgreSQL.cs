@@ -28,9 +28,11 @@ public class StaticMigrationHistoryRepositoryPostgreSQL : StaticMigrationHistory
     {
         get
         {
-            var stringTypeMapping = Dependencies.TypeMappingSource.GetMapping(typeof(string));
-            return $"SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = '{stringTypeMapping.GenerateSqlLiteral(TableSchema)}' AND table_name = '{stringTypeMapping.GenerateSqlLiteral(TableName)}')" +
-                   SqlGenerationHelper.StatementTerminator;
+            var builder = new StringBuilder();
+            builder.Append("SELECT EXISTS (");
+            AddTableExistsCondition(builder);
+            builder.Append($"){SqlGenerationHelper.StatementTerminator}");
+            return builder.ToString();
         }
     }
 
@@ -41,7 +43,7 @@ public class StaticMigrationHistoryRepositoryPostgreSQL : StaticMigrationHistory
     ///     doing so can result in application failures when updating to a new Entity Framework Core release.
     /// </summary>
     protected override bool InterpretExistsResult(object? value)
-        => value != null && value != DBNull.Value;
+        => value != null && value != DBNull.Value && (bool)value;
 
     /// <summary>
     ///     This is an internal API that supports the Entity Framework Core infrastructure and not subject to
@@ -51,16 +53,12 @@ public class StaticMigrationHistoryRepositoryPostgreSQL : StaticMigrationHistory
     /// </summary>
     public override string GetCreateIfNotExistsScript()
     {
-        var stringTypeMapping = Dependencies.TypeMappingSource.GetMapping(typeof(string));
-
         var builder = new StringBuilder()
             .AppendLine("DO $$")
             .AppendLine("BEGIN")
-            .AppendLine("    IF NOT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = '")
-            .Append(stringTypeMapping.GenerateSqlLiteral(SqlGenerationHelper.DelimitIdentifier(TableSchema!)))
-            .Append("' AND table_name = '")
-            .Append(stringTypeMapping.GenerateSqlLiteral(SqlGenerationHelper.DelimitIdentifier(TableName)))
-            .AppendLine("') THEN");
+            .Append("    IF NOT EXISTS (");
+        AddTableExistsCondition(builder);
+        builder.AppendLine(") THEN");
 
         using (var reader = new StringReader(GetCreateScript()))
         {
@@ -89,4 +87,19 @@ public class StaticMigrationHistoryRepositoryPostgreSQL : StaticMigrationHistory
 
         return builder.ToString();
     }
-} 
+
+    private void AddTableExistsCondition(StringBuilder builder)
+    {
+        var stringTypeMapping = Dependencies.TypeMappingSource.GetMapping(typeof(string));
+
+        var tableNameLiteral = stringTypeMapping.GenerateSqlLiteral(TableName);
+        builder.Append(
+            $"SELECT 1 FROM information_schema.tables WHERE table_name = {tableNameLiteral}");
+
+        if (TableSchema is { Length: > 0 })
+        {
+            var tableSchemaLiteral = stringTypeMapping.GenerateSqlLiteral(TableSchema);
+            builder.Append($" AND schema_name = {tableSchemaLiteral}");
+        }
+    }
+}
