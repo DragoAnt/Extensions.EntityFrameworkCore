@@ -27,4 +27,13 @@ public class EF6InitialMainDbContext: Microsoft.EntityFrameworkCore.DbContext
         modelBuilder.ApplyConfiguration(new CatMap());
         modelBuilder.ApplyConfiguration(new ElefantMap());
     }
+    
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        base.OnConfiguring(optionsBuilder);
+#if NET9_0
+        optionsBuilder.ConfigureWarnings(builder =>
+            builder.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning));
+#endif
+    }
 }

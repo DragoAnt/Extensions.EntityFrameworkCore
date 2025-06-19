@@ -3,7 +3,7 @@ using DragoAnt.EntityFrameworkCore.Data.Main.Configurations;
 
 namespace DragoAnt.EntityFrameworkCore.Data.Main;
 
-public class MainDbContext: Microsoft.EntityFrameworkCore.DbContext
+public class MainDbContext : Microsoft.EntityFrameworkCore.DbContext
 {
     /// <inheritdoc />
     protected MainDbContext()
@@ -27,5 +27,14 @@ public class MainDbContext: Microsoft.EntityFrameworkCore.DbContext
         modelBuilder.ApplyConfiguration(new AnimalMap());
         modelBuilder.ApplyConfiguration(new CatMap());
         modelBuilder.ApplyConfiguration(new ElefantMap());
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        base.OnConfiguring(optionsBuilder);
+#if NET9_0
+        optionsBuilder.ConfigureWarnings(builder =>
+            builder.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning));
+#endif
     }
 }
