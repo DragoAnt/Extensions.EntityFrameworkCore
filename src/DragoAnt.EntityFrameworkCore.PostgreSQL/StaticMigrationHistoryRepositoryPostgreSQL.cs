@@ -96,10 +96,8 @@ public class StaticMigrationHistoryRepositoryPostgreSQL : StaticMigrationHistory
         builder.Append(
             $"SELECT 1 FROM information_schema.tables WHERE table_name = {tableNameLiteral}");
 
-        if (TableSchema is { Length: > 0 })
-        {
-            var tableSchemaLiteral = stringTypeMapping.GenerateSqlLiteral(TableSchema);
-            builder.Append($" AND schema_name = {tableSchemaLiteral}");
-        }
+        var schema = TableSchema is { Length: > 0 } ? TableSchema : "public";
+        var tableSchemaLiteral = stringTypeMapping.GenerateSqlLiteral(schema);
+        builder.Append($" AND table_schema = {tableSchemaLiteral}");
     }
 }
