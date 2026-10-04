@@ -1,5 +1,11 @@
 <Project>
 
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\shared\init.targets" />
+  <Import Project="$(MSBuildThisFileDirectory).toolkit/msbuild/init.targets" />
+
+  <!-- The *.SqlServer.Tests suites need SQL Server on localhost,14330; they build everywhere and run only with -p:RunSqlServerTests=true. -->
+  <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.SqlServer.Tests')) AND '$(RunSqlServerTests)'!='true'">
+    <IsTestProject>false</IsTestProject>
+    <IsTestingPlatformApplication>false</IsTestingPlatformApplication>
+  </PropertyGroup>
 
 </Project>

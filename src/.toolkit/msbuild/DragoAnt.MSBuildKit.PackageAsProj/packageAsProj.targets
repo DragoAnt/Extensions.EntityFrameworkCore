@@ -1,0 +1,42 @@
+<Project>
+
+  <!-- Swap a PackageReference for a ProjectReference to debug a dependency from source:
+         <PackageReference Update="DragoAnt.Shared" ProjPath="../../Shared/src/DragoAnt.Shared.csproj" AsProj="true" />
+       AsProj="false" keeps the package. Run a restore after switching either way. -->
+  <ItemGroup>
+    <PackageAsProj_ProjectReference Include="@(PackageReference->HasMetadata('ProjPath')->WithMetadataValue('AsProj','true'))" />
+    <PackageAsProj_PackageReference Include="@(PackageReference->HasMetadata('ProjPath')->WithMetadataValue('AsProj','false'))" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="@(PackageAsProj_ProjectReference->'%(ProjPath)')" Allowed="True" />
+    <PackageReference Remove="@(PackageAsProj_ProjectReference->'%(Identity)')" />
+  </ItemGroup>
+
+  <Target Name="PackageAsProj_ProjectReference_Validation" Condition="'@(PackageAsProj_ProjectReference)'!=''" BeforeTargets="ResolveAssemblyReferences;Build;CoreCompile">
+    <ItemGroup>
+      <ReferenceAssemblyFilename Include="@(Reference->'%(Filename)')" />
+      <PackageAsProj_ProjectReference_Reference Include="@(PackageAsProj_ProjectReference)" Condition="'@(PackageAsProj_ProjectReference->'%(Identity)')'=='@(ReferenceAssemblyFilename->'%(Identity)')' And %(Identity)!=''" />
+    </ItemGroup>
+
+    <Message Text="PackageAsProj: packages attached as ProjectReference instead of PackageReference: @(PackageAsProj_ProjectReference)" Importance="high" />
+
+    <Error Code="MSKIT_PAP001"
+           Condition="'@(PackageAsProj_ProjectReference_Reference)'!=''"
+           Text="A package switched to a ProjectReference is still resolved from the package. Fix: run 'dotnet restore --force'."
+           File="$(MSBuildProjectFullPath)" />
+  </Target>
+
+  <Target Name="PackageAsProj_PackageReference_Validation" Condition="'@(PackageAsProj_PackageReference)'!=''" BeforeTargets="ResolveAssemblyReferences;Build;CoreCompile">
+    <ItemGroup>
+      <ReferenceAssemblyFilename Include="@(Reference->'%(Filename)')" />
+      <PackageAsProj_PackageReference_Reference Include="@(PackageAsProj_PackageReference)" Condition="'@(PackageAsProj_PackageReference->'%(Identity)')'=='@(ReferenceAssemblyFilename->'%(Identity)')' And %(Identity)!=''" />
+    </ItemGroup>
+
+    <Error Code="MSKIT_PAP002"
+           Condition="'$(PackageAsProj_SkipChecks)'!='True' AND @(PackageAsProj_PackageReference_Reference->Count())!=@(PackageAsProj_PackageReference->Count()) And @(ReferenceAssemblyFilename->Count())!=0"
+           Text="A package switched back from a ProjectReference is not restored yet. Fix: run 'dotnet restore --force', or set PackageAsProj_SkipChecks=True to skip this check."
+           File="$(MSBuildProjectFullPath)" />
+  </Target>
+
+</Project>

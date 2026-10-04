@@ -1,3 +1,9 @@
 # DragoAnt.EntityDefinition.EntityFrameworkCore.Flowchart
 
-        Definitions Marmaid Flowchart. Entity Framework implementation
+Render the entity definitions of an Entity Framework Core model as a Mermaid flowchart.
+
+```sh
+dotnet add package DragoAnt.EntityDefinition.EntityFrameworkCore.Flowchart
+```
+
+Source, issues and releases: https://github.com/DragoAnt/Extensions.EntityFrameworkCore

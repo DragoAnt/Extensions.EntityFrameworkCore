@@ -1,4 +1,4 @@
-﻿using DragoAnt.EntityConventions.Contacts;
+﻿using DragoAnt.EntityConventions.Contracts;
 
 namespace DragoAnt.EntityFrameworkCore.Data.Main;
 

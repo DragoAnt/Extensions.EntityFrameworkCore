@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Entity Framework Core common extensions</Description>
+    <Description>Relational model extensions for Entity Framework Core: entity mapping types and table metadata helpers.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup> 
 

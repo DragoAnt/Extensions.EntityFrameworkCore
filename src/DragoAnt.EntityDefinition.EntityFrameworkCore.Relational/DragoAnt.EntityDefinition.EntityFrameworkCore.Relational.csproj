@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Definitions Entity Framework Core Relational implementation</Description>
+    <Description>Relational definitions (tables, columns, keys) for entity definitions built from an Entity Framework Core model.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup> 
 

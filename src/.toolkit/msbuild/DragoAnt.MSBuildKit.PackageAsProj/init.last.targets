@@ -1,0 +1,8 @@
+<Project>
+
+  <Import Condition="Exists('$(MSKit_SlnFileDirectory)Directory.PackageAsProj.targets')"
+          Project="$(MSKit_SlnFileDirectory)Directory.PackageAsProj.targets" />
+
+  <Import Project="$(MSBuildThisFileDirectory)packageAsProj.targets" />
+
+</Project>

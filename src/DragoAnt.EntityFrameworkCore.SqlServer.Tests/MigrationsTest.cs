@@ -1,6 +1,6 @@
 using System.Data.Common;
-using DragoAnt.EntityConventions.Contacts;
-using DragoAnt.EntityConventions.TriggerBased.Contacts;
+using DragoAnt.EntityConventions.Contracts;
+using DragoAnt.EntityConventions.TriggerBased.Contracts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using DragoAnt.EntityFrameworkCore.Data.Initial;

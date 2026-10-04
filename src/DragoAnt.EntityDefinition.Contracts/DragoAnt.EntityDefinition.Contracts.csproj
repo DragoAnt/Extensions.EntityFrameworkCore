@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Definitions contracts</Description>
+    <Description>Attributes and builders for describing entities and their properties in an entity definition map.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup> 
 

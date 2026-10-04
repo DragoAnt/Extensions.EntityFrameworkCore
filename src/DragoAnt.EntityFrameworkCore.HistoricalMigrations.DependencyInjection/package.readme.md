@@ -1,3 +1,9 @@
-# DragoAnt.EntityFrameworkCore.HistoricalMigrations.Extensions.DependencyInjection
+# DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection
 
-        Dependency injection extensions for DragoAnt.AspNetCore.OData.Versioning
+Enable historical migrations on a DbContext with UseHistoricalMigrations.
+
+```sh
+dotnet add package DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection
+```
+
+Source, issues and releases: https://github.com/DragoAnt/Extensions.EntityFrameworkCore

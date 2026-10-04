@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Description>Dependency injection extensions for DragoAnt.AspNetCore.OData.Versioning</Description>
+        <Description>Enable historical migrations on a DbContext with UseHistoricalMigrations.</Description>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 

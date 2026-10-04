@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <Description>Enable entity conventions on a DbContext with UseEntityConventions.</Description>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 

@@ -1,5 +1,5 @@
-﻿using DragoAnt.EntityConventions.Contacts;
-using DragoAnt.EntityConventions.TriggerBased.Contacts;
+﻿using DragoAnt.EntityConventions.Contracts;
+using DragoAnt.EntityConventions.TriggerBased.Contracts;
 
 namespace DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute;
 

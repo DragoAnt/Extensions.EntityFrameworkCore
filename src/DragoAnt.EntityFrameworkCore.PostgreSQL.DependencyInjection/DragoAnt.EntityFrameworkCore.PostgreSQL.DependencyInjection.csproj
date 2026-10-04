@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>DragoAnt.EntityFrameworkCore.DependencyInjection</RootNamespace>
-    <Description>Entity Framework Core PostgreSQL specific extensions for dependency injection</Description>
+    <Description>Use static migrations with the Npgsql PostgreSQL provider (UseStaticMigrationsNpgsql).</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

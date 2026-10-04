@@ -1,0 +1,66 @@
+<Solution>
+  <Folder Name="/.slnItems/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.PackageAsProj.targets" />
+    <File Path="Directory.Packages.Metadata.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="../global.json" />
+    <File Path="../README.md" />
+    <File Path="Directory.Version.props" />
+    <File Path="nuget.config" />
+    <File Path="PackageAsProj.targets" />
+  </Folder>
+  <Folder Name="/.tests/">
+    <Project Path="DragoAnt.EntityDefinition.InMemory.Tests/DragoAnt.EntityDefinition.InMemory.Tests.csproj" />
+    <Project Path="DragoAnt.EntityDefinition.Model/DragoAnt.EntityDefinition.Model.csproj" />
+    <Project Path="DragoAnt.EntityDefinition.SqlServer.Tests/DragoAnt.EntityDefinition.SqlServer.Tests.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.Data.Initial/DragoAnt.EntityFrameworkCore.Data.Initial.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.Data.Main.EF6Initial/DragoAnt.EntityFrameworkCore.Data.Main.EF6Initial.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.Data.Main.HistoricalInitial/DragoAnt.EntityFrameworkCore.Data.Main.HistoricalInitial.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute/DragoAnt.EntityFrameworkCore.Data.Main.HistoricalWithoutAttribute.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Step1/DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Step1.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Step1PlusStep2/DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Step1PlusStep2.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.Data.Main.MigrationsV2/DragoAnt.EntityFrameworkCore.Data.Main.Migrations.Step2.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.Data.Main/DragoAnt.EntityFrameworkCore.Data.Main.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.InMemory.Tests/DragoAnt.EntityFrameworkCore.InMemory.Tests.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.SqlServer.Tests/DragoAnt.EntityFrameworkCore.SqlServer.Tests.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.Tests/DragoAnt.EntityFrameworkCore.Tests.csproj" />
+  </Folder>
+  <Folder Name="/.pipelines/">
+    <File Path="../.github/dependabot.yml" />
+    <File Path="../.github/workflows/ci.yml" />
+    <File Path="../.github/workflows/release.yml" />
+  </Folder>
+  <Folder Name="/Conventions/">
+    <Project Path="DragoAnt.EntityConventions.Contracts/DragoAnt.EntityConventions.Contracts.csproj" />
+    <Project Path="DragoAnt.EntityConventions.TriggerBased.Contracts/DragoAnt.EntityConventions.TriggerBased.Contracts.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.EntityConventions.DependencyInjection/DragoAnt.EntityFrameworkCore.EntityConventions.DependencyInjection.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection/DragoAnt.EntityFrameworkCore.EntityConventions.SqlServer.DependencyInjection.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer/DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased/DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.csproj" />
+    <Project Path="DragoAnt.EntityFrameworkCore.EntityConventions/DragoAnt.EntityFrameworkCore.EntityConventions.csproj" />
+  </Folder>
+  <Folder Name="/EntityDefinitions/">
+    <Project Path="DragoAnt.EntityDefinition.AspNetCore/DragoAnt.EntityDefinition.AspNetCore.csproj" />
+    <Project Path="DragoAnt.EntityDefinition.Contracts/DragoAnt.EntityDefinition.Contracts.csproj" />
+    <Project Path="DragoAnt.EntityDefinition.EntityFrameworkCore.Flowchart/DragoAnt.EntityDefinition.EntityFrameworkCore.Flowchart.csproj" />
+    <Project Path="DragoAnt.EntityDefinition.EntityFrameworkCore.Relational/DragoAnt.EntityDefinition.EntityFrameworkCore.Relational.csproj" />
+    <Project Path="DragoAnt.EntityDefinition.EntityFrameworkCore/DragoAnt.EntityDefinition.EntityFrameworkCore.csproj" />
+    <Project Path="DragoAnt.EntityDefinition.Flowchart/DragoAnt.EntityDefinition.Flowchart.csproj" />
+    <Project Path="DragoAnt.EntityDefinition/DragoAnt.EntityDefinition.csproj" />
+  </Folder>
+  <Project Path="DragoAnt.EntityFrameworkCore.DependencyInjection/DragoAnt.EntityFrameworkCore.DependencyInjection.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection/DragoAnt.EntityFrameworkCore.HistoricalMigrations.DependencyInjection.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore.HistoricalMigrations/DragoAnt.EntityFrameworkCore.HistoricalMigrations.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection/DragoAnt.EntityFrameworkCore.InMemory.DependencyInjection.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection/DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore.PostgreSQL/DragoAnt.EntityFrameworkCore.PostgreSQL.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore.Relational/DragoAnt.EntityFrameworkCore.Relational.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection/DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore.SqlServer/DragoAnt.EntityFrameworkCore.SqlServer.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore.StaticMigrations/DragoAnt.EntityFrameworkCore.StaticMigrations.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore.Testing/DragoAnt.EntityFrameworkCore.Testing.csproj" />
+  <Project Path="DragoAnt.EntityFrameworkCore/DragoAnt.EntityFrameworkCore.csproj" />
+  <Project Path="DragoAnt.StaticMigrations/DragoAnt.StaticMigrations.csproj" />
+</Solution>

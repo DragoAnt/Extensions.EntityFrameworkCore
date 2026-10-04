@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://learn.microsoft.com/dotnet/fundamentals/package-validation/diagnostic-ids -->
+<Suppressions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Suppression>
+    <DiagnosticId>CP0002</DiagnosticId>
+    <Target>M:DragoAnt.EntityFrameworkCore.StaticMigrations.BaseMigratorWithStaticMigrations.#ctor(Microsoft.EntityFrameworkCore.Migrations.IMigrationsAssembly,Microsoft.EntityFrameworkCore.Migrations.IHistoryRepository,Microsoft.EntityFrameworkCore.Storage.IDatabaseCreator,Microsoft.EntityFrameworkCore.Migrations.IMigrationsSqlGenerator,Microsoft.EntityFrameworkCore.Storage.IRawSqlCommandBuilder,Microsoft.EntityFrameworkCore.Migrations.IMigrationCommandExecutor,Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,Microsoft.EntityFrameworkCore.Storage.ISqlGenerationHelper,Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Infrastructure.IModelRuntimeInitializer,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger{Microsoft.EntityFrameworkCore.DbLoggerCategory.Migrations},Microsoft.EntityFrameworkCore.Diagnostics.IRelationalCommandDiagnosticsLogger,Microsoft.EntityFrameworkCore.Storage.IDatabaseProvider,DragoAnt.EntityFrameworkCore.StaticMigrations.IStaticMigrationsService)</Target>
+    <Left>lib/net8.0/DragoAnt.EntityFrameworkCore.StaticMigrations.dll</Left>
+    <Right>lib/net9.0/DragoAnt.EntityFrameworkCore.StaticMigrations.dll</Right>
+  </Suppression>
+  <Suppression>
+    <DiagnosticId>CP0002</DiagnosticId>
+    <Target>M:DragoAnt.EntityFrameworkCore.StaticMigrations.MigratorWithStaticMigrations.#ctor(Microsoft.EntityFrameworkCore.Migrations.IMigrationsAssembly,Microsoft.EntityFrameworkCore.Migrations.IHistoryRepository,Microsoft.EntityFrameworkCore.Storage.IDatabaseCreator,Microsoft.EntityFrameworkCore.Migrations.IMigrationsSqlGenerator,Microsoft.EntityFrameworkCore.Storage.IRawSqlCommandBuilder,Microsoft.EntityFrameworkCore.Migrations.IMigrationCommandExecutor,Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,Microsoft.EntityFrameworkCore.Storage.ISqlGenerationHelper,Microsoft.EntityFrameworkCore.Infrastructure.ICurrentDbContext,Microsoft.EntityFrameworkCore.Infrastructure.IModelRuntimeInitializer,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger{Microsoft.EntityFrameworkCore.DbLoggerCategory.Migrations},Microsoft.EntityFrameworkCore.Diagnostics.IRelationalCommandDiagnosticsLogger,Microsoft.EntityFrameworkCore.Storage.IDatabaseProvider,DragoAnt.EntityFrameworkCore.StaticMigrations.IStaticMigrationsService)</Target>
+    <Left>lib/net8.0/DragoAnt.EntityFrameworkCore.StaticMigrations.dll</Left>
+    <Right>lib/net9.0/DragoAnt.EntityFrameworkCore.StaticMigrations.dll</Right>
+  </Suppression>
+</Suppressions>

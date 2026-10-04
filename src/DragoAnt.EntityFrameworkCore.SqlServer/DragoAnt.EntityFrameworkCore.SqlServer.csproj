@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Entity Framework Core SqlServer specific extensions</Description>
+    <Description>SQL Server support for static migrations: history repository and enum tables.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

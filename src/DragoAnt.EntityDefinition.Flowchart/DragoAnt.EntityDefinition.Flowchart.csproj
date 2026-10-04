@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Definitions Marmaid Flowchart</Description>
+    <Description>Render entity definitions as a Mermaid flowchart diagram of entities, properties and relations.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup> 
 
@@ -14,17 +14,5 @@
     <ProjectReference Include="..\DragoAnt.EntityDefinition.Contracts\DragoAnt.EntityDefinition.Contracts.csproj" />
     <ProjectReference Include="..\DragoAnt.EntityDefinition\DragoAnt.EntityDefinition.csproj" />
   </ItemGroup> 
-
-  <ItemGroup>
-    <Compile Remove="Types\**" />
-  </ItemGroup> 
-
-  <ItemGroup>
-    <EmbeddedResource Remove="Types\**" />
-  </ItemGroup> 
-
-  <ItemGroup>
-    <None Remove="Types\**" />
-  </ItemGroup>
 
 </Project>

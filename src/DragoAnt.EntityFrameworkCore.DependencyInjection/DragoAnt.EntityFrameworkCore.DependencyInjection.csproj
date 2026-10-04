@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Description>Dependency injection extensions for DragoAnt.EntityFrameworkCore</Description>
+        <Description>Register static migrations, SQL resource files and enum lookup tables for an Entity Framework Core DbContext.</Description>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 

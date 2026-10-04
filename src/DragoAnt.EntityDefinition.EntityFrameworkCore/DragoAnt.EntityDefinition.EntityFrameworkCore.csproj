@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Definitions Entity Framework Core implementation</Description>
+    <Description>Build entity definitions from an Entity Framework Core model and its CLR types.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup> 
 

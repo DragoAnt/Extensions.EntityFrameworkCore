@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Entity Framework Core conventions</Description>
+    <Description>Apply entity conventions (auditing, discriminators, source-system ids) to an Entity Framework Core model by interface.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup> 
 
@@ -11,7 +11,7 @@
   </ItemGroup> 
 
   <ItemGroup>
-    <ProjectReference Include="..\DragoAnt.EntityConventions.Contacts\DragoAnt.EntityConventions.Contacts.csproj" />
+    <ProjectReference Include="..\DragoAnt.EntityConventions.Contracts\DragoAnt.EntityConventions.Contracts.csproj" />
     <ProjectReference Include="..\DragoAnt.StaticMigrations\DragoAnt.StaticMigrations.csproj" />
   </ItemGroup>
 

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Definitions implementation</Description>
+    <Description>Read entity definitions (descriptions, remarks, XML comments) from a model and write them out as tables such as CSV.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup> 
 

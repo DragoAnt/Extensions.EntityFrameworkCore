@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Definitions AspNet Core extensions</Description>
+    <Description>ASP.NET Core middleware that serves the entity definitions of an Entity Framework Core model as CSV.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup> 
 

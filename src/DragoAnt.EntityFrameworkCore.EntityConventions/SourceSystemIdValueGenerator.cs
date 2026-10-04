@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
-using DragoAnt.EntityConventions.Contacts;
+using DragoAnt.EntityConventions.Contracts;
 
 namespace DragoAnt.EntityFrameworkCore.EntityConventions;
 
