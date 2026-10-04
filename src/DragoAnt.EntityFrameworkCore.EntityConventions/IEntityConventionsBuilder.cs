@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using DragoAnt.EntityConventions.Contacts;
+using DragoAnt.EntityConventions.Contracts;
 
 namespace DragoAnt.EntityFrameworkCore.EntityConventions;
 

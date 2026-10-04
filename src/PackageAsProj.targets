@@ -5,12 +5,12 @@
     <_AsProj_DragoAnt_EntityFrameworkCore Condition="'$(PackageAsProj_DragoAnt)'=='true' Or '$(PackageAsProj_DragoAnt_EntityFrameworkCore)'=='true'">true</_AsProj_DragoAnt_EntityFrameworkCore>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Update="DragoAnt.EntityConventions.Contacts"
-                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityConventions.Contacts\DragoAnt.EntityConventions.Contacts.csproj"
+    <PackageReference Update="DragoAnt.EntityConventions.Contracts"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityConventions.Contracts\DragoAnt.EntityConventions.Contracts.csproj"
                       AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
 
-    <PackageReference Update="DragoAnt.EntityConventions.TriggerBased.Contacts"
-                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityConventions.TriggerBased.Contacts\DragoAnt.EntityConventions.TriggerBased.Contacts.csproj"
+    <PackageReference Update="DragoAnt.EntityConventions.TriggerBased.Contracts"
+                      ProjPath="$(MSBuildThisFileDirectory)DragoAnt.EntityConventions.TriggerBased.Contracts\DragoAnt.EntityConventions.TriggerBased.Contracts.csproj"
                       AsProj="$(_AsProj_DragoAnt_EntityFrameworkCore)" />
 
     <PackageReference Update="DragoAnt.EntityDefinition.AspNetCore"

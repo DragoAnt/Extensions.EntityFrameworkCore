@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using DragoAnt.EntityConventions.Contacts;
+using DragoAnt.EntityConventions.Contracts;
 
 namespace DragoAnt.EntityFrameworkCore.EntityConventions;
 

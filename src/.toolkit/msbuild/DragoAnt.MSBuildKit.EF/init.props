@@ -1,0 +1,9 @@
+<Project>
+
+  <!-- Entity Framework migration scripts: pwsh $(MSKit_EFScriptsDir)add-migration.ps1 -migrationName Name
+       They read the DbContext and project from ef-scripts-init.ps1 in the repository root. -->
+  <PropertyGroup>
+    <MSKit_EFScriptsDir>$(MSBuildThisFileDirectory)scripts/</MSKit_EFScriptsDir>
+  </PropertyGroup>
+
+</Project>

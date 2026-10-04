@@ -1,3 +1,9 @@
 # DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer
 
-        Entity Framework Core SqlServer specific extensions
+SQL Server triggers for the trigger-based entity conventions, applied through static migrations.
+
+```sh
+dotnet add package DragoAnt.EntityFrameworkCore.EntityConventions.TriggerBased.SqlServer
+```
+
+Source, issues and releases: https://github.com/DragoAnt/Extensions.EntityFrameworkCore

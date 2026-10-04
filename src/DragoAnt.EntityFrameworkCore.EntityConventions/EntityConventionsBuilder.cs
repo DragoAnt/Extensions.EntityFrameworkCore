@@ -2,7 +2,7 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using DragoAnt.EntityConventions.Contacts;
+using DragoAnt.EntityConventions.Contracts;
 
 namespace DragoAnt.EntityFrameworkCore.EntityConventions;
 

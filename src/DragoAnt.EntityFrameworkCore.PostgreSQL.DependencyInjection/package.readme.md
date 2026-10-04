@@ -1,3 +1,9 @@
-# DragoAnt.EntityFrameworkCore.PostgreSQL.Extensions.DependencyInjection
+# DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection
 
-        Entity Framework Core PostgreSQL specific extensions for dependency injection
+Use static migrations with the Npgsql PostgreSQL provider (UseStaticMigrationsNpgsql).
+
+```sh
+dotnet add package DragoAnt.EntityFrameworkCore.PostgreSQL.DependencyInjection
+```
+
+Source, issues and releases: https://github.com/DragoAnt/Extensions.EntityFrameworkCore

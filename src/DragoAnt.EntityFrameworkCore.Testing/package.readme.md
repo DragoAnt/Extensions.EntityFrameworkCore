@@ -1,3 +1,9 @@
 # DragoAnt.EntityFrameworkCore.Testing
 
-        Entity Framework Core extensions for testing purposes
+Test helpers for Entity Framework Core, such as checking a DbContext's entity mapping.
+
+```sh
+dotnet add package DragoAnt.EntityFrameworkCore.Testing
+```
+
+Source, issues and releases: https://github.com/DragoAnt/Extensions.EntityFrameworkCore

@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Marker interfaces and options for entity conventions such as create/concurrency auditing, discriminators and source-system ids.</Description>
+    <Nullable>enable</Nullable>
+  </PropertyGroup> 
+
+</Project>

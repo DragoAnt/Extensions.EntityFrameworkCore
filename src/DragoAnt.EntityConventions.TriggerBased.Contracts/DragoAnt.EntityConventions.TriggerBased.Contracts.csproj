@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Marker interfaces for trigger-based entity conventions: soft delete and update auditing.</Description>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragoAnt.EntityConventions.Contracts\DragoAnt.EntityConventions.Contracts.csproj" />
+  </ItemGroup> 
+
+</Project>

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Entity Framework Core SqlServer specific extensions</Description>
+    <Description>SQL Server triggers for the trigger-based entity conventions, applied through static migrations.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

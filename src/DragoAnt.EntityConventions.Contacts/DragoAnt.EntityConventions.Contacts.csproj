@@ -1,8 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <Description>Entity conventions contracts for map enities with commom functionality </Description>
-    <Nullable>enable</Nullable>
-  </PropertyGroup> 
-
-</Project>

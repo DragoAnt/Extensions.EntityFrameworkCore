@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Description>Dependency injection extensions for DragoAnt.AspNetCore.OData.Versioning</Description>
+        <Description>Squash an Entity Framework Core migration history into an initial migration while keeping existing databases on track.</Description>
         <Nullable>enable</Nullable>
         <NoWarn>EF1001;$(NoWarn)</NoWarn>
     </PropertyGroup>

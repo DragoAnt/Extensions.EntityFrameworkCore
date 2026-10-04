@@ -1,3 +1,9 @@
-# DragoAnt.EntityFrameworkCore.SqlServer.Extensions.DependencyInjection
+# DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection
 
-        Dependency injection extensions for DragoAnt.AspNetCore.OData.Versioning
+Use static migrations with the SQL Server provider (UseStaticMigrationsSqlServer).
+
+```sh
+dotnet add package DragoAnt.EntityFrameworkCore.SqlServer.DependencyInjection
+```
+
+Source, issues and releases: https://github.com/DragoAnt/Extensions.EntityFrameworkCore

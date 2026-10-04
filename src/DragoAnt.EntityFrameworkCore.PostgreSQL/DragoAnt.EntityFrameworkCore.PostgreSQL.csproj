@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Entity Framework Core PostgreSQL specific extensions</Description>
+    <Description>PostgreSQL support for static migrations: migrator, history repository and enum tables for Npgsql.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

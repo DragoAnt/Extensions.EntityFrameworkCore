@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Static migrations</Description>
+    <Description>Provider-independent model for static migrations: items, collections and apply conditions.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

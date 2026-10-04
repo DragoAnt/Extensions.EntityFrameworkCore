@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Entity Framework Core common extensions</Description>
+    <Description>Entity Framework Core extensions: model helpers and fixed queries shared by the other DragoAnt.EntityFrameworkCore packages.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup> 
 

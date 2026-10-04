@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Entity Framework Core extensions for testing purposes</Description>
+    <Description>Test helpers for Entity Framework Core, such as checking a DbContext's entity mapping.</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup> 
 

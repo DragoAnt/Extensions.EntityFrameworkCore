@@ -1,15 +1,24 @@
 <Project>
   <PropertyGroup>
-    <TargetFrameworkStrategy>TargetFrameworks</TargetFrameworkStrategy>
     <TargetFrameworks>net7.0;net8.0;net9.0</TargetFrameworks>
-    <NoWarn>$(NoWarn);CS1591;EF1001;xUnit1051</NoWarn>
+    <Copyright>Copyright (c) 2025 DragoAnt</Copyright>
 
-    <!-- TODO:   Remove after remove support of net7-->
+    <NoWarn>$(NoWarn);EF1001</NoWarn>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+
+    <!-- TODO: Remove after remove support of net7 -->
     <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
     <NoWarn>$(NoWarn);NETSDK1138</NoWarn>
+
+    <PackageTags>efcore;entity-framework-core;migrations;database</PackageTags>
+
+    <MSKit_TestsAssertions>FluentAssertions</MSKit_TestsAssertions>
   </PropertyGroup>
 
-  <Import Project="$(MSBuildThisFileDirectory).msbuild\shared\init.props" />
+  <Import Project="$(MSBuildThisFileDirectory).toolkit/msbuild/init.props" />
 
   <PropertyGroup Condition="'$(IsTestsProject)'=='True'">
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
